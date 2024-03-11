@@ -16,7 +16,6 @@ def magic_calculation(a, b):
 		use "print(magic_calculation(2, 3))" to see output
 	"""
 
-	# Initializing result with a default value
 	result = 98
 	power_result = a ** b
 
