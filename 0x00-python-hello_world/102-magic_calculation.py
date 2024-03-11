@@ -15,8 +15,4 @@
 """
 
 def magic_calculation(a, b):
-	result = 98
-	power_result = a ** b
-
-	final_result = result + power_result
-	return final_result
+	return (98 + a ** b)
