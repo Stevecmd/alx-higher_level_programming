@@ -17,9 +17,5 @@
 
 def magic_calculation(a, b):
 	# Initializing result with a default value
-	result = 98
-	power_result = a ** b
-
-	final_result = result + power_result
-	return final_result
+	return (98 + a ** b)
 # print(magic_calculation(2, 3))
