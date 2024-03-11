@@ -19,8 +19,9 @@ typedef struct listint_s
 
 int check_cycle(listint_t *head);
 size_t print_listint(const listint_t *h);
-listint_t *add_nodeint(listint_t **head, const int n);
 void free_listint(listint_t *head);
-def magic_calculation(a, b);
+listint_t *add_nodeint(listint_t **head, const int n);
+
+int magic_calculation(int a, int b);
 
 #endif /* LISTS_H */
