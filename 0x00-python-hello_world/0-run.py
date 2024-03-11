@@ -2,6 +2,7 @@
 import os
 import subprocess
 
+
 def main():
     pyfile = os.environ.get('PYFILE')
     if not pyfile:
@@ -13,6 +14,7 @@ def main():
         return
 
     subprocess.run(['python3', pyfile])
+
 
 if __name__ == "__main__":
     main()
