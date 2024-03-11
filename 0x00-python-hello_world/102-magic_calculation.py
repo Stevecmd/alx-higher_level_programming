@@ -15,7 +15,6 @@
 """
 
 def magic_calculation(a, b):
-	# Initializing result with a default value
 	result = 98
 	power_result = a ** b
 
