@@ -13,7 +13,7 @@ def magic_calculation(a, b):
 
 	Returns:
 		int: The result of the magical calculation.
-		uncomment the "print(magic_calculation(2, 3))" to see output
+		use "print(magic_calculation(2, 3))" to see output
 	"""
 
 	# Initializing result with a default value
@@ -22,4 +22,3 @@ def magic_calculation(a, b):
 
 	final_result = result + power_result
 	return final_result
-# print(magic_calculation(2, 3))
