@@ -12,10 +12,12 @@
  *
  *	Returns:
  *		int: The result of the magical calculation.
- *		uncomment the "print(magic_calculation(2, 3))" to see output
 """
 
 def magic_calculation(a, b):
 	# Initializing result with a default value
-	return (98 + a ** b)
-# print(magic_calculation(2, 3))
+	result = 98
+	power_result = a ** b
+
+	final_result = result + power_result
+	return final_result
