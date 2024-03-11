@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-/**
+"""
  * 	magic_calculation - Performs a magical calculation based on given inputs.
  *
  *	This function calculates the result of a magical operation using two input parameters 'a' and 'b'.
@@ -13,7 +13,7 @@
  *	Returns:
  *		int: The result of the magical calculation.
  *		uncomment the "print(magic_calculation(2, 3))" to see output
-*/
+"""
 
 def magic_calculation(a, b):
 	# Initializing result with a default value
