@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 """
  * 	magic_calculation - Performs a magical calculation based on given inputs.
  *
@@ -15,4 +14,8 @@
 """
 
 def magic_calculation(a, b):
-	return (98 + a ** b)
+	result = 98
+	power_result = a ** b
+
+	final_result = result + power_result
+	return final_result
