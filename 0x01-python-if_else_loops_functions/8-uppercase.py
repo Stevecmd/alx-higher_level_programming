@@ -2,7 +2,6 @@
 
 def uppercase(str):
     """Convert and print a string of characters in uppercase."""
-    result = ""
     for char in str:
         if ord(char) >= 97 and ord(char) <= 122:
             char = chr(ord(char) - 32)
