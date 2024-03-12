@@ -6,3 +6,4 @@ for digit1 in range(0, 9):
             print("{:d}{:d}".format(digit1, digit2), end="")
         else:
             print("{:d}{:d}".format(digit1, digit2), end=", ")
+print()
