@@ -1,10 +1,8 @@
 #!/usr/bin/python3
 
-# Importing the add function from add_0 module
-from add_0 import add
-
-# Checking if the script is executed directly
 if __name__ == "__main__":
+    # Importing the add function from add_0 module
+    from add_0 import add
     
     # Initializing variables
     a = 1
