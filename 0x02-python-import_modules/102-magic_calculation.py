@@ -4,7 +4,7 @@ def magic_calculation(a, b):
     """Performing ByteCode calculation"""
 
     from magic_calculation_102 import add, sub
-    
+
     # If a is less than b
     if a < b:
         # Initialize c with the result of adding a and b
@@ -16,5 +16,5 @@ def magic_calculation(a, b):
         return c
 
     else:
-        # If a is greater than or equal to b, return the result of subtracting b from a
+        # If a is greater than or equal to b, return b - a
         return sub(a, b)
