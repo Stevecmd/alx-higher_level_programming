@@ -653,5 +653,13 @@ Element 2: int
 Element 3: int
 
 ```
+NB: Installing Python 3 dev tools is necessary:
+
+```sh
+
+sudo apt update
+sudo apt install python3-dev
+
+```
 
 File: `100-print_python_list_info.c`
