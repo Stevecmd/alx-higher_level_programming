@@ -1,6 +1,5 @@
 def add_tuple(tuple_a=(), tuple_b=()):
-    """Add two tuples.
-        Ensure both tuples have at least 2 elements default 0"""
+    """Add two tuples or default 0"""
     tuple_a = tuple_a[:2] + (0, 0) if len(tuple_a) < 2 else tuple_a[:2]
     tuple_b = tuple_b[:2] + (0, 0) if len(tuple_b) < 2 else tuple_b[:2]
     """Return a tuple with the sum of corresponding elements"""
