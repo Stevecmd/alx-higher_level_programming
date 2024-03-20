@@ -2,13 +2,13 @@
 
 def weight_average(my_list=[]):
 	if not my_list:
-		return (0)
+		return 0
 
 	avg = 0
 	size = 0
 
-	for tuple in my_list:
-		avg += (tuple[0] * tuple[1])
-		size += tuple[1]
+	for tpl in my_list:
+		avg += (tpl[0] * tpl[1])
+		size += tpl[1]
 
 	return (avg / size)
