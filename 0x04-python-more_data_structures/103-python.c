@@ -1,5 +1,7 @@
 #include <Python.h>
 
+void print_python_bytes(PyObject *p);
+
 /**
  * print_python_list - Print information about a Python list object
  * @list_obj: A pointer to a PyObject representing a list object
