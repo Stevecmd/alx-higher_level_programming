@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Define a MagicClass matching exactly a bytecode provided by Holberton.
+Define a MagicClass matching the bytecode provided.
 """
 
 import math
@@ -12,26 +12,31 @@ class MagicClass:
 
     def __init__(self, radius=0):
         """
-        Initialize a MagicClass.
+        Initialize MagicClass.
 
         Args:
-            radius (float or int): The radius of the new MagicClass.
+            radius (int or float): The radius of the MagicClass.
         Raises:
             TypeError: If radius is not a number.
         """
-        self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
             raise TypeError("radius must be a number")
         self.__radius = radius
 
     def area(self):
         """
-        Return the area of the MagicClass.
+        Compute the area of the MagicClass.
+
+        Returns:
+            float: The area of the MagicClass.
         """
         return self.__radius ** 2 * math.pi
 
     def circumference(self):
         """
-        Return The circumference of the MagicClass.
+        Compute the circumference of the MagicClass.
+
+        Returns:
+            float: The circumference of the MagicClass.
         """
         return 2 * math.pi * self.__radius
