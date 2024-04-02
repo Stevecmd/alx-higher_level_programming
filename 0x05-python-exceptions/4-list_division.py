@@ -14,35 +14,19 @@ def list_division(my_list_1, my_list_2, list_length):
     """
     result_list = []
 
-    for i in range(list_length):
+    for i in range(0, list_length):
         try:
-            result = safe_print_division(my_list_1[i], my_list_2[i])
+            result = my_list_1[i] / my_list_2[i]
         except IndexError:
             result = 0
             print("out of range")
+        except ZeroDivisionError:
+            result = 0
+            print("division by 0")
+        except TypeError:
+            result = 0
+            print("wrong type")
         finally:
             result_list.append(result)
 
     return result_list
-
-def safe_print_division(a, b):
-    """
-    Divides two integers and prints the result.
-
-    Args:
-        a (int): The numerator.
-        b (int): The denominator.
-
-    Returns:
-        float or None: The result of the division.
-    """
-    try:
-        result = a / b
-    except ZeroDivisionError:
-        result = 0
-        print("division by 0")
-    except TypeError:
-        result = 0
-        print("wrong type")
-    finally:
-        return result
