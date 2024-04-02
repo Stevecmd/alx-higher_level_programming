@@ -23,7 +23,7 @@ def safe_print_list_integers(my_list=[], x=0):
             print("{:d}".format(value), end="")
             # Increment the count of printed integers
             printed_integers += 1
-            # Break the loop if the required number of integers have been printed
+            # Break the loop
             if printed_integers >= x:
                 break
         except (ValueError, TypeError):
