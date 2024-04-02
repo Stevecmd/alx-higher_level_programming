@@ -2,6 +2,7 @@
 
 import sys
 
+
 def safe_print_integer_err(value):
     """
     Prints an integer with "{:d}".format().
@@ -13,8 +14,7 @@ def safe_print_integer_err(value):
         value (int): The integer to print.
 
     Returns:
-        If a TypeError or ValueError occurs - False.
-        Otherwise - True.
+        bool: True if the integer was printed successfully, False otherwise.
     """
     try:
         print("{:d}".format(value))
