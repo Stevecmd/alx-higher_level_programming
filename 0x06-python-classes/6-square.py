@@ -69,6 +69,7 @@ class Square:
             print(" " * self.__position[0], end="")
             print("#" * self.__size)
 
+
 if __name__ == "__main__":
     my_square_1 = Square(3)
     my_square_1.my_print()
