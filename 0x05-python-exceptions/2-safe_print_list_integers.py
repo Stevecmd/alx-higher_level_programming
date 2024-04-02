@@ -5,11 +5,11 @@ def safe_print_list_integers(my_list=[], x=0):
     Print the first x integers from a list.
 
     Args:
-        my_list (list): The list from which to print elements.
-        x (int): The maximum number of integers to print from my_list.
+        my_list (list): The list from which to print.
+        x (int): Maximum number of integers to print.
 
     Returns:
-        int: The number of integers successfully printed.
+        int: The number of integers printed.
     """
     # Initialize the count of printed integers
     printed_integers = 0
@@ -27,10 +27,10 @@ def safe_print_list_integers(my_list=[], x=0):
             if printed_integers >= x:
                 break
         except (ValueError, TypeError):
-            # Continue to the next item if conversion to integer fails
+            # Continue to the next item
             continue
     
-    # Print a newline character after printing the integers
+    # Print a newline character
     print("")
     
     # Return the number of integers printed
