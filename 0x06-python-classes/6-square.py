@@ -2,6 +2,7 @@
 
 """Define a class Square."""
 
+
 class Square:
     """Represent a square."""
 
@@ -67,7 +68,6 @@ class Square:
         for _ in range(self.__size):
             print(" " * self.__position[0], end="")
             print("#" * self.__size)
-
 
 if __name__ == "__main__":
     my_square_1 = Square(3)
