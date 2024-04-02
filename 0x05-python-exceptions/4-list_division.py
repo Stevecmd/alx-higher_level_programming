@@ -2,12 +2,12 @@
 
 def list_division(my_list_1, my_list_2, list_length):
     """
-    Divides elements of two lists and returns a new list containing the results.
+    Divides elements of two lists and returns a new list.
 
     Args:
         my_list_1 (list): The first list.
         my_list_2 (list): The second list.
-        list_length (int): The maximum length to iterate through the lists.
+        list_length (int): The maximum length to iterate
 
     Returns:
         list: A new list containing the division results.
@@ -34,7 +34,7 @@ def safe_print_division(a, b):
         b (int): The denominator.
 
     Returns:
-        float or None: The result of the division, or None if division by zero or invalid inputs occur.
+        float or None: The result of the division.
     """
     try:
         result = a / b
