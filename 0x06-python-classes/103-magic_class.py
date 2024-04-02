@@ -34,3 +34,11 @@ class MagicClass:
             float: The circumference of the MagicClass.
         """
         return 2 * math.pi * self.__radius
+
+"""Documentation for the module
+This module defines a MagicClass that represents a circle.
+"""
+
+"""Documentation for the class
+Represents a circle.
+"""
