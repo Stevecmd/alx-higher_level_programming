@@ -25,10 +25,6 @@ class Square:
 
         Args:
             value (int): The new size of the square.
-
-        Raises:
-            TypeError: If value is not an integer.
-            ValueError: If value is negative.
         """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
