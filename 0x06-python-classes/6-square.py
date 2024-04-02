@@ -59,7 +59,7 @@ class Square:
     def my_print(self):
         """Print the square with the '#' character."""
         if self.__size == 0:
-            print("")
+            print()
             return
 
         for _ in range(self.__position[1]):
