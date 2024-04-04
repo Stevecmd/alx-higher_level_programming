@@ -1,0 +1,68 @@
+# Test cases for add_integer function
+
+# Import the add_integer function
+>>> from 0-add_integer import add_integer
+
+# Test case 1: Both integers
+>>> add_integer(2, 3)
+5
+
+# Test case 2: One integer, one float
+>>> add_integer(2, 3.5)
+5
+
+# Test case 3: Both floats
+>>> add_integer(2.5, 3.5)
+5
+
+# Test case 4: Default value for b
+>>> add_integer(2)
+98
+
+# Test case 5: Large integers
+>>> add_integer(1000000, 2000000)
+3000000
+
+# Test case 6: Negative integers
+>>> add_integer(-5, 10)
+5
+
+# Test case 7: Both are floats
+>>> add_integer(2.5, 3.8)
+6
+
+# Test case 8: One is float and the other is an integer
+>>> add_integer(2.5, 3)
+5
+
+# Test case 9: Both are negative integers
+>>> add_integer(-5, -10)
+-15
+
+# Test case 10: Adding 0 to an integer
+>>> add_integer(5, 0)
+5
+
+# Test case 11: Adding 0 to a float
+>>> add_integer(5.5, 0)
+5
+
+# Test case 12: Adding two negative floats
+>>> add_integer(-5.5, -3.3)
+-8
+
+# Test case 13: Adding a large positive float and a large negative float
+>>> add_integer(1000000.5, -2000000.3)
+-999999
+
+# Test case 14: Adding a large negative float and a large positive float
+>>> add_integer(-1000000.5, 2000000.3)
+999999
+
+# Test case 15: Adding a large positive integer and a large positive float
+>>> add_integer(1000000, 2000000.3)
+3000000
+
+# Test case 16: Adding a large positive float and a large positive integer
+>>> add_integer(1000000.5, 2000000)
+3000000
