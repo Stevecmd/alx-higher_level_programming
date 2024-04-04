@@ -4,6 +4,9 @@ Usage of 2-matrix_divided.py
 
 This module defines the matrix division function ``matrix_divided(matrix, div)``.
 
+Usage
+=====
+
 ``matrix_divided(...)`` returns a new matrix that is a copy of the parameter
 ``matrix`` with all elements divided by ``div``.
 
