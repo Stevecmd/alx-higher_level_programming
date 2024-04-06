@@ -308,3 +308,60 @@ Test passed.
 
 ```
 File: `5-text_indentation.py`, `tests/5-text_indentation.txt`
+
+5. Max integer - Unittest 
+
+Since the beginning you have been creating “Interactive tests”. For this exercise, you will add Unittests.
+
+In this task, you will write unittests for the function `def max_integer(list=[]):.`
+
+ - Your test file should be inside a folder `tests`
+ - You have to use the `unittest module`
+ - Your test file should be python files (extension: `.py`)
+ - Your test file should be executed by using this command: `python3 -m unittest tests.6-max_integer_test`
+ - All tests you make must be passable by the function below
+ - We strongly encourage you to work together on test cases, so that you don’t miss any edge case
+
+```sh
+
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x07-python-test_driven_development$ cat 6-max_integer.py
+#!/usr/bin/python3
+"""Module to find the max integer in a list
+"""
+
+
+def max_integer(list=[]):
+    """Function to find and return the max integer in a list of integers
+        If the list is empty, the function returns None
+    """
+    if len(list) == 0:
+        return None
+    result = list[0]
+    i = 1
+    while i < len(list):
+        if list[i] > result:
+            result = list[i]
+        i += 1
+    return result
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x07-python-test_driven_development$ cat 6-main.py
+#!/usr/bin/python3
+max_integer = __import__('6-max_integer').max_integer
+
+print(max_integer([1, 2, 3, 4]))
+print(max_integer([1, 3, 4, 2]))
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x07-python-test_driven_development$ ./6-main.py
+4
+4
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x07-python-test_driven_development$ python3 -m unittest tests.6-max_integer_test 2>&1 | tail -1
+OK
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x07-python-test_driven_development$ head -7 tests/6-max_integer_test.py 
+#!/usr/bin/python3
+"""Unittest for max_integer([..])
+"""
+import unittest
+max_integer = __import__('6-max_integer').max_integer
+
+class TestMaxInteger(unittest.TestCase):
+
+```
+File: `tests`/`6-max_integer_test.py`
