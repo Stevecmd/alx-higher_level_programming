@@ -4,7 +4,6 @@ import sys
 
 def is_safe(board, row, col):
     """Check if it's safe to place a queen on the board."""
-    # Check the current column
     for i in range(row):
         if (board[i] == col
                 or board[i] - i == col - row
@@ -45,7 +44,7 @@ if __name__ == "__main__":
         print("N must be a number")
         sys.exit(1)
 
-    board = [-1] * N  # Initialize the board with -1
+    board = [-1] * N
     solutions = []
     solve_nqueens(N, 0, board, solutions)
     for solution in solutions:
