@@ -56,7 +56,9 @@ class Rectangle:
 
     def perimeter(self):
         """Calculate and return the perimeter of the Rectangle."""
-        return 2 * (self.__width + self.__height) if self.__width != 0 and self.__height != 0 else 0
+        return (2 * (self.__width + self.__height)
+                if self.__width != 0 and self.__height != 0
+                else 0)
 
     def __str__(self):
         """Return a printable representation of the Rectangle."""
@@ -69,6 +71,6 @@ class Rectangle:
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        """Print a message when a Rectangle object is deleted and update the instance count."""
+        """Print message when Rectangle is deleted, update instance count."""
         type(self).number_of_instances -= 1
         print("Bye rectangle...")

@@ -58,7 +58,10 @@ class Rectangle:
 
     def perimeter(self):
         """Calculate and return the perimeter of the Rectangle."""
-        return 2 * (self.__width + self.__height) if self.__width != 0 and self.__height != 0 else 0
+        if self.__width != 0 and self.__height != 0:
+            return 2 * (self.__width + self.__height)
+        else:
+            return 0
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
@@ -72,7 +75,7 @@ class Rectangle:
             Rectangle: The Rectangle object with the greater area.
 
         Raises:
-            TypeError: If either rect_1 or rect_2 is not an instance of Rectangle.
+            TypeError: If rect_1 or rect_2 is not an instance of Rectangle.
         """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
@@ -86,13 +89,18 @@ class Rectangle:
         """Return a printable representation of the Rectangle."""
         if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join([str(self.print_symbol) * self.__width for _ in range(self.__height)])
+        return "\n".join(
+            [
+                str(self.print_symbol) * self.__width
+                for _ in range(self.__height)
+            ]
+        )
 
     def __repr__(self):
         """Return the string representation of the Rectangle."""
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        """Print a message when a Rectangle object is deleted and update the instance count."""
+        """Print message - Rectangle is deleted and update instance count."""
         type(self).number_of_instances -= 1
         print("Bye rectangle...")

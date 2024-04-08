@@ -50,7 +50,9 @@ class Rectangle:
 
     def perimeter(self):
         """Return the perimeter of the Rectangle."""
-        return 2 * (self.__width + self.__height) if self.__width != 0 and self.__height != 0 else 0
+        return (2 * (self.__width + self.__height)
+                if self.__width != 0 and self.__height != 0
+                else 0)
 
     def __str__(self):
         """Return a printable representation of the Rectangle."""
