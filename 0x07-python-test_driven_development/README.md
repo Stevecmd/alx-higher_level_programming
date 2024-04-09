@@ -452,7 +452,18 @@ s = b"The spoon does not exist"
 ```sh
 
 julien@ubuntu:~/0x07. Pyhton Strings$ gcc -shared -Wl,-soname,libPython.so -o libPython.so -fPIC -I/usr/include/python3.4 102-python.c
-julien@ubuntu:~/0x07. Pyhton Strings$ python3 ./102-tests.py
+
+```
+if above command doesnt work use:
+```sh
+
+gcc -shared -Wl,-soname,libPython.so -o libPython.so -fPIC $(python3-config --includes) 102-python.c
+
+```
+
+```sh
+
+root@89241ea4ff1f:/alx-higher_level_programming/0x07-python-test_driven_development# python3 102-tests.py
 [.] string object info
   type: compact ascii
   length: 24
@@ -479,7 +490,6 @@ julien@ubuntu:~/0x07. Pyhton Strings$ python3 ./102-tests.py
   value: スプーンは存在しない
 [.] string object info
   [ERROR] Invalid String Object
-julien@ubuntu:~/0x07. Pyhton Strings$ 
 
 ```
 
