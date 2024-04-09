@@ -396,14 +396,14 @@ Write a function `magic_string()` that returns a string “BestSchool” n times
 
 ```sh
 
-guillaume@ubuntu:~/0x09$ cat 100-main.py
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x09-python-everything_is_object$ cat 100-main.py
 #!/usr/bin/python3
 magic_string = __import__('100-magic_string').magic_string
 
 for i in range(10):
     print(magic_string())
 
-guillaume@ubuntu:~/0x09$ ./100-main.py | cat -e
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x09-python-everything_is_object$ ./100-main.py | cat -e
 BestSchool$
 BestSchool, BestSchool$
 BestSchool, BestSchool, BestSchool$
@@ -414,7 +414,7 @@ BestSchool, BestSchool, BestSchool, BestSchool, BestSchool, BestSchool, BestScho
 BestSchool, BestSchool, BestSchool, BestSchool, BestSchool, BestSchool, BestSchool, BestSchool$
 BestSchool, BestSchool, BestSchool, BestSchool, BestSchool, BestSchool, BestSchool, BestSchool, BestSchool$
 BestSchool, BestSchool, BestSchool, BestSchool, BestSchool, BestSchool, BestSchool, BestSchool, BestSchool, BestSchool$
-guillaume@ubuntu:~/0x09$ wc -l 100-magic_string.py 
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x09-python-everything_is_object$ wc -l 100-magic_string.py
 4 100-magic_string.py
 
 ```
