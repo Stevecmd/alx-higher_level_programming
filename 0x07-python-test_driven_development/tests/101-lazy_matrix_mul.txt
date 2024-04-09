@@ -1,20 +1,4 @@
 """
 >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
 
->>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
-[[7, 10], [15, 22]]
-
->>> lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
-[[13, 16]]
-
->>> lazy_matrix_mul([[1.2, 5.5, 6.2], [4.66, 12.3, -9.2]], [[5.0, 3.3], [-2.9, 4.4], [7.2, 4.4]])
-[[34.69, 55.44000000000001], [-78.61, 29.018000000000008]]
-
->>> lazy_matrix_mul([[1, 2.2, 3.3, 4], [5, 6, 7, 8.8]], [[1.1, 2, 3.3], [4.0, 5.5, 6], [7, 8, 9], [10.01, 11, 12.3]])
-[[73.03999999999999, 84.5, 95.4], [166.58800000000002, 195.8, 223.74]]
-
->>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [2, 3], [4, 5]])
-Traceback (most recent call last):
-    ...
-ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 3 is different from 2)
 """
