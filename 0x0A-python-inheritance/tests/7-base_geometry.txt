@@ -1,0 +1,41 @@
+================================
+Usage of 7-base_geometry.py
+================================
+
+# Module doc string check
+>>> m = __import__("7-base_geometry").__doc__
+>>> len(m) > 1
+True
+
+# Class docstring check
+>>> c = __import__("7-base_geometry").BaseGeometry.__doc__
+>>> len(c) > 1
+True
+
+# Method docstring check
+>>> mod = __import__("7-base_geometry").BaseGeometry.__doc__
+>>> len(mod) > 1
+True
+
+>>> bg = BaseGeometry()
+
+# Test area() method
+>>> bg.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
+
+# Test integer_validator() method with valid input
+>>> bg.integer_validator("test", 5)
+
+# Test integer_validator() method with invalid input (non-integer)
+>>> bg.integer_validator("test", "invalid")
+Traceback (most recent call last):
+    ...
+TypeError: test must be an integer
+
+# Test integer_validator() method with invalid input (less than or equal to 0)
+>>> bg.integer_validator("test", 0)
+Traceback (most recent call last):
+    ...
+ValueError: test must be greater than 0
