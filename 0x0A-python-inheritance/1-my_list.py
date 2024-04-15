@@ -4,11 +4,13 @@ Defines an inherited list
 """
 
 class MyList(list):
-    """a subclass of list"""
-    def __init__(self):
-        """Initializing the object"""
-        super().__init__()
+    """
+    A custom list class that extends the built-in list class.
+    """
 
     def print_sorted(self):
-        """Print a list in ascending order."""
-        print(sorted(self))
+        """
+        Prints the list sorted in ascending order.
+        """
+        sorted_list = sorted(self)
+        print(sorted_list)
