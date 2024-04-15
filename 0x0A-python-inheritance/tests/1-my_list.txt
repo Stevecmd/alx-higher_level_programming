@@ -19,3 +19,19 @@ Usage of 1-my_list.py
 >>> empty_list = MyList()
 >>> empty_list.print_sorted()
 []
+
+# Test print_sorted() method on a list with repeated elements
+>>> repeated_list = MyList([3, 1, 2, 2, 1])
+>>> repeated_list.print_sorted() 
+[1, 1, 2, 2, 3]
+
+# Test print_sorted() method on a list with negative numbers
+>>> negative_list = MyList([-3, -1, -2])
+>>> negative_list.print_sorted() 
+[-3, -2, -1]
+
+# Test append() method with multiple elements
+>>> my_list.append(4)
+>>> my_list.append(0)
+>>> my_list.print_sorted()
+[0, 1, 2, 3, 4, 5]
