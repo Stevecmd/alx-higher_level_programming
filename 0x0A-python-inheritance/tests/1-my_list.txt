@@ -2,6 +2,21 @@
 Usage of 1-my_list.py
 ================================
 
+# Module doc string check
+>>> m = __import__("1-my_list").__doc__
+>>> len(m) > 1
+True
+
+# Class docstring check
+>>> c = __import__("1-my_list").MyList.__doc__
+>>> len(c) > 1
+True
+
+# Method docstring check
+>>> mod = __import__("1-my_list").MyList.print_sorted.__doc__
+>>> len(mod) > 1
+True
+
 # Tests
 >>> MyList = __import__('1-my_list').MyList
 >>> my_list = MyList([3, 1, 2])
