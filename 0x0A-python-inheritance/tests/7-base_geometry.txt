@@ -16,3 +16,39 @@ True
 >>> mod = __import__("7-base_geometry").BaseGeometry.__doc__
 >>> len(mod) > 1
 True
+
+# Check if BaseGeometry class is defined
+>>> hasattr(__import__("7-base_geometry"), "BaseGeometry")
+True
+
+# Check if area method is defined in BaseGeometry class
+>>> hasattr(__import__("7-base_geometry").BaseGeometry, "area")
+True
+
+# Check if integer_validator method is defined in BaseGeometry class
+>>> hasattr(__import__("7-base_geometry").BaseGeometry, "integer_validator")
+True
+
+# Check if area method raises Exception when called
+>>> bg = __import__("7-base_geometry").BaseGeometry()
+>>> try:
+...     bg.area()
+... except Exception as e:
+...     isinstance(e, Exception)
+True
+
+# Check if integer_validator method raises TypeError for non-integer value
+>>> bg = __import__("7-base_geometry").BaseGeometry()
+>>> try:
+...     bg.integer_validator("test", "string")
+... except TypeError:
+...     True
+True
+
+# Check if integer_validator method raises ValueError for negative integer value
+>>> bg = __import__("7-base_geometry").BaseGeometry()
+>>> try:
+...     bg.integer_validator("test", -10)
+... except ValueError:
+...     True
+True
