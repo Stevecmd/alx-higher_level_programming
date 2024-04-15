@@ -1,0 +1,8 @@
+================================
+Usage of 2-is_same_class.py
+================================
+
+# Module doc string check
+>>> m = __import__("2-is_same_class").__doc__
+>>> len(m) > 1
+True
