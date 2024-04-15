@@ -70,17 +70,36 @@ File: `0-lookup.py`
 
 Write a class MyList that inherits from list:
 
-    Public instance method: def print_sorted(self): that prints the list, but sorted (ascending sort)
-    You can assume that all the elements of the list will be of type int
-    You are not allowed to import any module
+ - Public instance method: `def print_sorted(self):` that prints the list, but sorted (ascending sort)
+ - You can assume that all the elements of the list will be of type int
+ - You are not allowed to import any module
 
+```sh
 
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0A-python-inheritance$ cat 1-main.py
+#!/usr/bin/python3
+MyList = __import__('1-my_list').MyList
 
+my_list = MyList()
+my_list.append(1)
+my_list.append(4)
+my_list.append(2)
+my_list.append(3)
+my_list.append(5)
+print(my_list)
+my_list.print_sorted()
+print(my_list)
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0A-python-inheritance$ chmod u+x 1-my_list.py
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0A-python-inheritance$ chmod u+x 1-main.py
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0A-python-inheritance$ ./1-main.py
+[1, 4, 2, 3, 5]
+[1, 2, 3, 4, 5]
+[1, 4, 2, 3, 5]
 
-
-
+```
 
 File: `1-my_list.py, tests/1-my_list.txt`
+
 
 2. Exact same object 
 
