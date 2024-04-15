@@ -3,6 +3,7 @@
 Defines an inherited list
 """
 
+
 class MyList(list):
     """
     A custom list class that extends the built-in list class.
