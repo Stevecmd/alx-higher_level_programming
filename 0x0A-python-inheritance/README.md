@@ -103,28 +103,56 @@ File: `1-my_list.py, tests/1-my_list.txt`
 
 2. Exact same object 
 
+Write a function that returns `True` if the object is exactly an instance of the specified class ; otherwise `False`.
 
+ - Prototype: `def is_same_class(obj, a_class):`
+ - You are not allowed to import any module
 
+```sh
 
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0A-python-inheritance$ cat 2-main.py
+#!/usr/bin/python3
+is_same_class = __import__('2-is_same_class').is_same_class
 
+a = 1
+if is_same_class(a, int):
+    print("{} is an instance of the class {}".format(a, int.__name__))
+if is_same_class(a, float):
+    print("{} is an instance of the class {}".format(a, float.__name__))
+if is_same_class(a, object):
+    print("{} is an instance of the class {}".format(a, object.__name__))
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0A-python-inheritance$ ./2-main.py
+1 is an instance of the class int
 
-
-
-
-
-
-
+```
 
 File: `2-is_same_class.py`
 
 3. Same class or inherit from 
+Write a function that returns `True` if the object is an instance of, or if the object is an instance of a class that inherited from, the specified class ; otherwise `False`.
+
+ - Prototype: `def is_kind_of_class(obj, a_class):`
+ - You are not allowed to import any module
+
+```sh
+
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0A-python-inheritance$ cat 3-main.py
+#!/usr/bin/python3
+is_kind_of_class = __import__('3-is_kind_of_class').is_kind_of_class
+
+a = 1
+if is_kind_of_class(a, int):
+    print("{} comes from {}".format(a, int.__name__))
+if is_kind_of_class(a, float):
+    print("{} comes from {}".format(a, float.__name__))
+if is_kind_of_class(a, object):
+    print("{} comes from {}".format(a, object.__name__))
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0A-python-inheritance$ ./3-main.py
+1 comes from int
+1 comes from object
 
 
-
-
-
-
-
+```
 
 File: `3-is_kind_of_class.py`
 
