@@ -52,3 +52,27 @@ True
 ... except ValueError:
 ...     True
 True
+
+# Check if area method raises an Exception with the message 'area() is not implemented'
+>>> bg = __import__("7-base_geometry").BaseGeometry()
+>>> try:
+...     bg.area()
+... except Exception as e:
+...     str(e) == "area() is not implemented"
+True
+
+# Check if integer_validator method raises a TypeError exception with the message '<name> must be an integer'
+>>> bg = __import__("7-base_geometry").BaseGeometry()
+>>> try:
+...     bg.integer_validator("test", "string")
+... except TypeError as e:
+...     str(e) == "test must be an integer"
+True
+
+# Check if integer_validator method raises a ValueError exception with the message '<name> must be greater than 0'
+>>> bg = __import__("7-base_geometry").BaseGeometry()
+>>> try:
+...     bg.integer_validator("test", -10)
+... except ValueError as e:
+...     str(e) == "test must be greater than 0"
+True
