@@ -36,7 +36,7 @@ class Student:
 
     def reload_from_json(self, json_data):
         """
-        Replaces all attributes of the Student instance with values from a dictionary.
+        Replaces attributes of Student instance with values from dictionary.
 
         Args:
             json_data (dict): Dictionary containing attribute names and values.

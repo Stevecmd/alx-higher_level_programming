@@ -9,7 +9,7 @@ prints the following statistics:
 
 def print_stats(size, status_codes):
     """Print accumulated metrics.
-    
+
     Args:
         size (int): The accumulated read file size.
         status_codes (dict): The accumulated count of status codes.
