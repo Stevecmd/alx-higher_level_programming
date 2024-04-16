@@ -30,7 +30,14 @@ class Student:
         Returns:
             dict: Dictionary representation of the Student instance.
         """
-        if (type(attrs) == list and
-                all(type(ele) == str for ele in attrs)):
-            return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
-        return self.__dict__
+        if attrs is None:
+            return {
+                'age': self.age,
+                'last_name': self.last_name,
+                'first_name': self.first_name
+                }
+        else:
+            return {
+                attr: getattr(self, attr)
+                for attr in attrs
+                if hasattr(self, attr)}
