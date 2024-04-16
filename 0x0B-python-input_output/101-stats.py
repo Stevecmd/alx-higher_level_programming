@@ -1,15 +1,18 @@
 #!/usr/bin/python3
-"""Reads from standard input and computes metrics.
+"""Analyzes input data from standard input to generate metrics.
 
-Every ten lines or exit via keyboard interruption (CTRL + C),
-Prints the following statistics:
-    - Total file size up to that point.
-    - Count of read status codes up to that point.
+Upon processing every ten lines or upon receiving a
+keyboard interruption (CTRL + C),
+the script calculates and displays the following statistics:
+
+The cumulative file size up to the current point.
+The count of each encountered HTTP status code
+up to the current point.
 """
 
 
-def print_stats(size, status_codes):
-    """Print accumulated metrics.
+def print_status_codes(size, status_codes):
+    """Print accumulated metrics on status codes.
 
     Args:
         size (int): The accumulated read file size.
@@ -29,7 +32,7 @@ def main():
     try:
         for line in sys.stdin:
             if count == 10:
-                print_stats(size, status_codes)
+                print_status_codes(size, status_codes)
                 count = 1
             else:
                 count += 1
@@ -47,10 +50,10 @@ def main():
             except IndexError:
                 pass
 
-        print_stats(size, status_codes)
+        print_status_codes(size, status_codes)
 
     except KeyboardInterrupt:
-        print_stats(size, status_codes)
+        print_status_codes(size, status_codes)
         raise
 
 
