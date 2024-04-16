@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a text file insertion function."""
+"""Defines a function for text file insertion."""
 
 
 def append_after(filename="", search_string="", new_string=""):
@@ -14,11 +14,11 @@ def append_after(filename="", search_string="", new_string=""):
     Returns:
         None
     """
-    with open(filename, 'r') as file:
-        lines = file.readlines()
-
-    with open(filename, 'w') as file:
-        for line in lines:
-            file.write(line)
+    temp_lines = []
+    with open(filename, "r") as file:
+        for line in file:
+            temp_lines.append(line)
             if search_string in line:
-                file.write(new_string + '\n')
+                temp_lines.append(new_string + "\n")
+    with open(filename, "w") as file:
+        file.writelines(temp_lines)
