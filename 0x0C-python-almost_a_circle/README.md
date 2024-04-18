@@ -269,5 +269,6 @@ Running tests:
 ```sh
 alx-higher_level_programming/0x0C-python-almost_a_circle/models$ ../tests/test_base.py 
 alx-higher_level_programming/0x0C-python-almost_a_circle$ python3 -m unittest discover tests
+alx-higher_level_programming/0x0C-python-almost_a_circle$ python3 -m unittest tests/test_base.py
 
 ```
