@@ -11,7 +11,7 @@ class Calc:
         pass
 
     def check_int_or_float(self, num):
-        return type(num) == int or type(num) == float:
+        return type(num) == int or type(num) == float
 
     def add(self, num1, num2):
         """Adds two numbers
