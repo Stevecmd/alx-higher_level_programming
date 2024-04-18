@@ -72,4 +72,11 @@ class Rectangle(Base):
         """Setter for the y attribute"""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
         self.__y = value
+
+    def check_y(self, value):
+        """Check if y is non-negative"""
+        if value < 0:
+            raise ValueError("y must be >= 0")
