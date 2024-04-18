@@ -134,18 +134,18 @@ File: `models/base.py`, `models/__init__.py`
 
 2. First Rectangle
 
-Write the class Rectangle that inherits from Base:
+Write the class `Rectangle` that inherits from `Base`:
 
-    In the file models/rectangle.py
-    Class Rectangle inherits from Base
-    Private instance attributes, each with its own public getter and setter:
-        __width -> width
-        __height -> height
-        __x -> x
-        __y -> y
-    Class constructor: def __init__(self, width, height, x=0, y=0, id=None):
-        Call the super class with id - this super call with use the logic of the __init__ of the Base class
-        Assign each argument width, height, x and y to the right attribute
+- In the file `models/rectangle.py`
+- Class `Rectangle` inherits from `Base`
+- Private instance attributes, each with its own public getter and setter:
+    - `__width` -> `width`
+    - `__height` -> `height`
+    - `__x` -> `x`
+    - `__y` -> `y`
+- Class constructor: `def __init__(self, width, height, x=0, y=0, id=None):`
+    - Call the super class with `id` - this super call with use the logic of the `__init__` of the `Base` class
+    - Assign each argument `width`, `height`, `x` and `y` to the right attribute
 
 Why private attributes with getter/setter? Why not directly public attribute?
 
@@ -153,7 +153,7 @@ Because we want to protect attributes of our class. With a setter, you are able 
 
 ```sh
 
-guillaume@ubuntu:~/$ cat 1-main.py
+alx-higher_level_programming/0x0C-python-almost_a_circle$ cat 1-main.py
 #!/usr/bin/python3
 """ 1-main """
 from models.rectangle import Rectangle
@@ -169,10 +169,17 @@ if __name__ == "__main__":
     r3 = Rectangle(10, 2, 0, 0, 12)
     print(r3.id)
 
-guillaume@ubuntu:~/$ ./1-main.py
+alx-higher_level_programming/0x0C-python-almost_a_circle$ ./1-main.py
 1
 2
 12
+
+alx-higher_level_programming/0x0C-python-almost_a_circle$ python3 -m unittest tests/test_base.py
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK
 
 ```
 File: `models/rectangle.py`
