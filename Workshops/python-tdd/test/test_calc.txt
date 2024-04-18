@@ -1,0 +1,40 @@
+# Importing necessary modules
+Arrangements:
+	>>> calc = __import__('calc').Calc()
+
+# Test Success
+	>>> calc.__doc__
+	'This is a calculator class'
+	>>> calc.add(10, 20)
+	30
+	>>> calc.div(20, 10)
+	2.0
+	>>> calc.add.__doc__
+	Adds two numbers
+	Args:
+		num1 (int): the first number to be added
+		num2 (int): the second number to be added
+	>>> calc.div.__doc__
+	Divides two numbers
+	Args:
+		num1 (int): the first number to be divided
+		num2 (int): the second number to be divided
+	>>> calc.add(23.0, 23)
+	46.0
+
+# Test Failures
+
+No Arguments:
+	>>> calc.add()
+	Traceback (most recent call last):
+	...
+	TypeError: add() missing 2 required positional arguments: 'num1' and 'num2'
+
+Different Types:
+	>>> calc.add("asdfa", 23)
+	Traceback (most recent call last):
+	...
+	ValueError: Only Integer and Float is allowed
+	>>> calc.div(123, 0)
+	ZeroDivisionError: division by zero is not allowed
+
