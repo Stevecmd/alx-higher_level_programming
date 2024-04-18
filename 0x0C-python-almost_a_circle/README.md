@@ -238,7 +238,7 @@ Update the class Rectangle by adding the public method def area(self): that retu
 
 ```sh
 
-guillaume@ubuntu:~/$ cat 3-main.py
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0C-python-almost_a_circle$ cat 3-main.py
 #!/usr/bin/python3
 """ 3-main """
 from models.rectangle import Rectangle
@@ -253,8 +253,7 @@ if __name__ == "__main__":
 
     r3 = Rectangle(8, 7, 0, 0, 12)
     print(r3.area())
-
-guillaume@ubuntu:~/$ ./3-main.py
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0C-python-almost_a_circle$ ./3-main.py
 6
 20
 56
