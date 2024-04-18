@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines a base model class."""
 
+
 class Base:
     """
     Base class to manage id attribute in all future classes.
@@ -11,10 +12,11 @@ class Base:
     def __init__(self, id=None):
         """
         Initializes an instance of Base.
-        
+
         Args:
-            id (int): If provided, assigns the id to the instance. 
-                      If not provided, increments __nb_objects and assigns the new value to id.
+            id (int): If provided, assigns the id to the instance.
+                      If not provided, increments __nb_objects and
+                      assigns the new value to id.
         """
         if id is not None:
             if id < 0:
