@@ -24,6 +24,9 @@ class Person:
 		detail = f"My name is {self.name} and my email is {self.email}"
 		print (detail)
 
+	def get_email(self):
+		return self.email
+
 class Student(Person):
 	def __init__(self, name, email, age, classRoom):
 		self.classRoom = classRoom
@@ -39,6 +42,11 @@ class Student(Person):
 		. I am also a student in {self.classRoom}."
 		print(detail)
 		return detail
+	
+	def get_email(self):
+		if self.age > 18:
+			return super().get_email()
+		return -1
 
 
 person1 = Person("Eva", "eva@gmail.com")
