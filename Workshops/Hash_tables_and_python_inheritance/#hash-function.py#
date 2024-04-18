@@ -1,0 +1,9 @@
+"""array with 26 spaces
+
+100 elements capacity
+the hash fucntion assumes a = 1...
+
+hash("abc") -> 1 + 2 + 3 = 6
+
+
+"""
