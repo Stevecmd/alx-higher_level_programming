@@ -2,6 +2,7 @@
 """Unit tests for the Rectangle class"""
 
 from models.rectangle import Rectangle
+from models.base import Base
 import unittest
 import sys
 import os
@@ -11,6 +12,10 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 class TestRectangle(unittest.TestCase):
     """Test cases for the Rectangle class"""
+
+    def setUp(self):
+        """Reset the __nb_objects counter before each test"""
+        Base._Base__nb_objects = 0
 
     def test_constructor_no_id(self):
         """Test constructor with no id provided"""
