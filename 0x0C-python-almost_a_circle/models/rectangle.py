@@ -14,7 +14,7 @@ class Rectangle(Base):
             height (int): Height of the rectangle.
             x (int): X coordinate of the rectangle's position.
             y (int): Y coordinate of the rectangle's position.
-            id (int): Identifier of the rectangle. If None, a unique id is generated.
+            id (int): Identifier of rectangle. None - unique id generated.
         """
         super().__init__(id)
         self.width = width
@@ -101,3 +101,17 @@ class Rectangle(Base):
             self.width,
             self.height
         )
+
+    def update(self, *args):
+        """Assigns arguments to each attribute"""
+        if len(args) > 0:
+            self.id = args[0]
+        if len(args) > 1:
+            self.width = args[1]
+        if len(args) > 2:
+            self.height = args[2]
+        if len(args) > 3:
+            self.x = args[3]
+        if len(args) > 4:
+            self.y = args[4]
+
