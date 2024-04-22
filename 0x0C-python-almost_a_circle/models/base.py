@@ -1,5 +1,6 @@
 import json
 
+
 class Base:
     """
     Base class to manage id attribute in all future classes.
@@ -79,10 +80,10 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """
-        Returns an instance with all attributes already set using the dictionary.
+        Returns an instance - all attributes set using the dictionary.
 
         Args:
-            **dictionary (dict): Dictionary containing attributes and their values.
+            **dictionary (dict): Dictionary - attributes and their values.
 
         Returns:
             Base: Instance with attributes set from the dictionary.
@@ -93,8 +94,8 @@ class Base:
             dummy_instance = cls(1)  # Create a dummy Square instance
         else:
             raise ValueError("Unknown class type")
-        
-        dummy_instance.update(**dictionary)  # Update attributes using the dictionary
+
+        dummy_instance.update(**dictionary)
         return dummy_instance
 
 # 19. File to instances
