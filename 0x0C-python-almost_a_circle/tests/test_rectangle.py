@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """Unit tests for the Rectangle class"""
 
+from models.rectangle import Rectangle
 import unittest
 import sys
 import os
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from models.rectangle import Rectangle
 
 class TestRectangle(unittest.TestCase):
     """Test cases for the Rectangle class"""
@@ -85,6 +85,7 @@ class TestRectangle(unittest.TestCase):
         """Test constructor with non-integer y"""
         with self.assertRaises(TypeError):
             r = Rectangle(5, 10, 1, "string")
+
 
 if __name__ == "__main__":
     unittest.main()

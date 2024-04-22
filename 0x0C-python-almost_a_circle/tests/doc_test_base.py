@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 """ 0-main """
-
+from models.base import Base
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from models.base import Base
 
 if __name__ == "__main__":
     b1 = Base()

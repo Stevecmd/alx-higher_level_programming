@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """Unit tests for the Base class"""
 
+from models.base import Base
 import unittest
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from models.base import Base
 
 class TestBase(unittest.TestCase):
     """Test cases for the Base class"""
@@ -69,6 +69,7 @@ class TestBase(unittest.TestCase):
         """Test constructor with negative maximum integer id"""
         with self.assertRaises(ValueError):
             b = Base(-sys.maxsize)
+
 
 if __name__ == "__main__":
     unittest.main()
