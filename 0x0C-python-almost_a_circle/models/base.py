@@ -1,7 +1,4 @@
-#!/usr/bin/python3
 import json
-"""Defines a base model class."""
-
 
 class Base:
     """
@@ -62,3 +59,19 @@ class Base:
                 list_dicts = [obj.to_dictionary() for obj in list_objs]
                 json_str = cls.to_json_string(list_dicts)
                 file.write(json_str)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        Returns the list of dictionaries represented by json_string.
+
+        Args:
+            json_string (str): JSON string representing a list of dictionaries.
+
+        Returns:
+            list: List of dictionaries represented by json_string.
+        """
+        if json_string is None or json_string == "":
+            return []
+        else:
+            return json.loads(json_string)
