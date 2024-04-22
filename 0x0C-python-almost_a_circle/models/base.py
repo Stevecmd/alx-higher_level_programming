@@ -19,8 +19,6 @@ class Base:
                       assigns the new value to id.
         """
         if id is not None:
-            if id < 0:
-                raise ValueError("id must be a non-negative integer")
             self.id = id
         else:
             Base.__nb_objects += 1
