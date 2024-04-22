@@ -10,9 +10,20 @@ class Square(Rectangle):
             size (int): Size of the square.
             x (int): X coordinate of the square's position.
             y (int): Y coordinate of the square's position.
-            id (int): Identifier of the square.None - unique id generated.
+            id (int): Identifier of the square. If None, a unique id is generated.
         """
         super().__init__(size, size, x, y, id)
+
+    @property
+    def size(self):
+        """Getter for size attribute"""
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """Setter for size attribute"""
+        self.width = value
+        self.height = value
 
     def __str__(self):
         """Override the __str__ method"""
