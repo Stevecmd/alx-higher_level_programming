@@ -17,16 +17,16 @@ class Square(Rectangle):
         """
         super().__init__(size, size, x, y, id)
 
-    # @property
-    # def size(self):
-    #     """Getter for size attribute"""
-    #     return self.width
+    @property
+    def size(self):
+        """Getter for size attribute"""
+        return self.width
 
-    # @size.setter
-    # def size(self, value):
-    #     """Setter for size attribute"""
-    #     self.width = value
-    #     self.height = value
+    @size.setter
+    def size(self, value):
+        """Setter for size attribute"""
+        self.width = value
+        self.height = value
 
     # def update(self, *args, **kwargs):
     #     """Assign attributes to the instance"""
