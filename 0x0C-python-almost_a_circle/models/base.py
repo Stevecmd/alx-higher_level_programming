@@ -5,6 +5,9 @@ import json
 class Base:
     """
     Base class to manage id attribute in all future classes.
+
+    Attributes:
+        __nb_objects (int): The number of instantiated Bases.
     """
 
     __nb_objects = 0
