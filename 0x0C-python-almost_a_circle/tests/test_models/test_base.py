@@ -1,15 +1,15 @@
-#!/usr/bin/python3
-"""Unit tests for the Base class"""
+# #!/usr/bin/python3
+# """Unit tests for the Base class"""
 
-from models.base import Base
-import unittest
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+# from models.base import Base
+# import unittest
+# import sys
+# import os
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 
-class TestBase(unittest.TestCase):
-    """Test cases for the Base class"""
+# class TestBase(unittest.TestCase):
+#     """Test cases for the Base class"""
 
 #     def setUp(self):
 #         """Reset __nb_objects attribute before each test"""
