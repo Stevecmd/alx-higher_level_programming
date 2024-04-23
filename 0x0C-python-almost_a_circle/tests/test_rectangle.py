@@ -91,7 +91,6 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             r = Rectangle(5, 10, 1, "string")
 
-
     def test_rectangle_1_2_exists(self):
         """Test constructor with width=1 and height=2"""
         r = Rectangle(1, 2)
@@ -183,7 +182,6 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(hasattr(r, 'update'))
         r.update(**{'id': 89})
         self.assertEqual(r.id, 89)
-
 
 
 if __name__ == "__main__":
