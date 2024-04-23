@@ -92,5 +92,99 @@ class TestRectangle(unittest.TestCase):
             r = Rectangle(5, 10, 1, "string")
 
 
+    def test_rectangle_1_2_exists(self):
+        """Test constructor with width=1 and height=2"""
+        r = Rectangle(1, 2)
+        self.assertIsNotNone(r)
+
+    def test_rectangle_1_2_3_exists(self):
+        """Test constructor with width=1, height=2, and x=3"""
+        r = Rectangle(1, 2, 3)
+        self.assertIsNotNone(r)
+
+    def test_rectangle_1_2_3_4_exists(self):
+        """Test constructor with width=1, height=2, x=3, and y=4"""
+        r = Rectangle(1, 2, 3, 4)
+        self.assertIsNotNone(r)
+
+    def test_rectangle_0_2_exists(self):
+        """Test constructor with width=0 and height=2"""
+        with self.assertRaises(ValueError):
+            r = Rectangle(0, 2)
+
+    def test_rectangle_1_0_exists(self):
+        """Test constructor with width=1 and height=0"""
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, 0)
+
+    def test_str_method_exists(self):
+        """Test the existence of the __str__() method"""
+        r = Rectangle(1, 2)
+        self.assertTrue(hasattr(r, '__str__'))
+
+    def test_to_dictionary_method_exists(self):
+        """Test the existence of the to_dictionary() method"""
+        r = Rectangle(1, 2)
+        self.assertTrue(hasattr(r, 'to_dictionary'))
+
+    def test_update_method_exists(self):
+        """Test the existence of the update() method"""
+        r = Rectangle(1, 2)
+        self.assertTrue(hasattr(r, 'update'))
+
+    def test_update_89_method_exists(self):
+        """Test the existence of the update(89) method"""
+        r = Rectangle(1, 2)
+        self.assertTrue(hasattr(r, 'update'))
+        r.update(89)
+        self.assertEqual(r.id, 89)
+
+    def test_update_89_1_method_exists(self):
+        """Test the existence of the update(89, 1) method"""
+        r = Rectangle(1, 2)
+        self.assertTrue(hasattr(r, 'update'))
+        r.update(89, 1)
+        self.assertEqual(r.id, 89)
+        self.assertEqual(r.width, 1)
+
+    def test_update_89_1_2_method_exists(self):
+        """Test the existence of the update(89, 1, 2) method"""
+        r = Rectangle(1, 2)
+        self.assertTrue(hasattr(r, 'update'))
+        r.update(89, 1, 2)
+        self.assertEqual(r.id, 89)
+        self.assertEqual(r.width, 1)
+        self.assertEqual(r.height, 2)
+
+    def test_update_89_1_2_3_method_exists(self):
+        """Test the existence of the update(89, 1, 2, 3) method"""
+        r = Rectangle(1, 2)
+        self.assertTrue(hasattr(r, 'update'))
+        r.update(89, 1, 2, 3)
+        self.assertEqual(r.id, 89)
+        self.assertEqual(r.width, 1)
+        self.assertEqual(r.height, 2)
+        self.assertEqual(r.x, 3)
+
+    def test_update_89_1_2_3_4_method_exists(self):
+        """Test the existence of the update(89, 1, 2, 3, 4) method"""
+        r = Rectangle(1, 2)
+        self.assertTrue(hasattr(r, 'update'))
+        r.update(89, 1, 2, 3, 4)
+        self.assertEqual(r.id, 89)
+        self.assertEqual(r.width, 1)
+        self.assertEqual(r.height, 2)
+        self.assertEqual(r.x, 3)
+        self.assertEqual(r.y, 4)
+
+    def test_update_with_dictionary_method_exists(self):
+        """Test the existence of the update(**{'id': 89}) method"""
+        r = Rectangle(1, 2)
+        self.assertTrue(hasattr(r, 'update'))
+        r.update(**{'id': 89})
+        self.assertEqual(r.id, 89)
+
+
+
 if __name__ == "__main__":
     unittest.main()
