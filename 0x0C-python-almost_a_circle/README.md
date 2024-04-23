@@ -271,3 +271,314 @@ alx-higher_level_programming/0x0C-python-almost_a_circle$ python3 -m unittest di
 alx-higher_level_programming/0x0C-python-almost_a_circle$ python3 -m unittest tests/test_base.py
 
 ```
+
+5. Display #0
+
+Update the class `Rectangle` by adding the public method `def display(self):` that prints in stdout the `Rectangle` instance with the character `#` - you don’t need to handle `x` and `y` here.
+```sh
+
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0C-python-almost_a_circle$ cat 4-main.py
+#!/usr/bin/python3
+""" 4-main """
+from models.rectangle import Rectangle
+
+if __name__ == "__main__":
+
+    r1 = Rectangle(4, 6)
+    r1.display()
+
+    print("---")
+
+    r1 = Rectangle(2, 2)
+    r1.display()
+
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0C-python-almost_a_circle$ ./4-main.py
+####
+####
+####
+####
+####
+####
+---
+##
+##
+
+```
+File: `models/rectangle.py`
+
+6. __str__
+Update the class `Rectangle` by overriding the `__str__` method so that it returns `[Rectangle] (<id>) <x>/<y> - <width>/<height>`
+
+```sh
+
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0C-python-almost_a_circle$ cat 5-main.py
+#!/usr/bin/python3
+""" 5-main """
+from models.rectangle import Rectangle
+
+if __name__ == "__main__":
+
+    r1 = Rectangle(4, 6, 2, 1, 12)
+    print(r1)
+
+    r2 = Rectangle(5, 5, 1)
+    print(r2)
+
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0C-python-almost_a_circle$ ./5-main.py
+[Rectangle] (12) 2/1 - 4/6
+[Rectangle] (1) 1/0 - 5/5
+
+```
+File: `models/rectangle.py`
+
+7. Display #1
+Update the class `Rectangle` by improving the public method `def display(self):` to print in stdout the `Rectangle` instance with the character # by taking care of x and y
+
+```sh
+
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0C-python-almost_a_circle$ cat 6-main.py
+#!/usr/bin/python3
+""" 6-main """
+from models.rectangle import Rectangle
+
+if __name__ == "__main__":
+
+    r1 = Rectangle(2, 3, 2, 2)
+    r1.display()
+
+    print("---")
+
+    r2 = Rectangle(3, 2, 1, 0)
+    r2.display()
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0C-python-almost_a_circle$ ./6-main.py | cat -e
+$
+$
+  ##$
+  ##$
+  ##$
+---$
+ ###$
+ ###$
+
+```
+File: `models/rectangle.py`
+
+7. Display #1
+Update the class `Rectangle` by improving the public method `def display(self):` to print in stdout the `Rectangle` instance with the character # by taking care of `x` and `y`
+
+```sh
+
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0C-python-almost_a_circle$ cat 6-main.py
+#!/usr/bin/python3
+""" 6-main """
+from models.rectangle import Rectangle
+
+if __name__ == "__main__":
+
+    r1 = Rectangle(2, 3, 2, 2)
+    r1.display()
+
+    print("---")
+
+    r2 = Rectangle(3, 2, 1, 0)
+    r2.display()
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0C-python-almost_a_circle$ ./6-main.py | cat -e
+$
+$
+  ##$
+  ##$
+  ##$
+---$
+ ###$
+ ###$
+
+```
+File: `models/rectangle.py`
+
+8. Update #0
+
+Update the class `Rectangle` by adding the public method `def update(self, *args):` that assigns an argument to each attribute:
+
+- 1st argument should be the `id` attribute
+- 2nd argument should be the `width` attribute
+- 3rd argument should be the `height` attribute
+- 4th argument should be the `x` attribute
+- 5th argument should be the `y` attribute
+
+This type of argument is called a “no-keyword argument” - Argument order is super important.
+```sh
+
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0C-python-almost_a_circle$ cat 7-main.py
+#!/usr/bin/python3
+""" Doc """
+from models.rectangle import Rectangle
+
+if __name__ == "__main__":
+
+    r1 = Rectangle(10, 10, 10, 10)
+    print(r1)
+
+    r1.update(89)
+    print(r1)
+
+    r1.update(89, 2)
+    print(r1)
+
+    r1.update(89, 2, 3)
+    print(r1)
+
+    r1.update(89, 2, 3, 4)
+    print(r1)
+
+    r1.update(89, 2, 3, 4, 5)
+    print(r1)
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0C-python-almost_a_circle$ ./7-main.py
+[Rectangle] (1) 10/10 - 10/10
+[Rectangle] (89) 10/10 - 10/10
+[Rectangle] (89) 10/10 - 2/10
+[Rectangle] (89) 10/10 - 2/3
+[Rectangle] (89) 4/10 - 2/3
+[Rectangle] (89) 4/5 - 2/3
+
+```
+File: `models/rectangle.py`
+
+9. Update #1
+Update the class `Rectangle` by updating the public method `def update(self, *args):` by changing the prototype to `update(self, *args, **kwargs)` that assigns a key/value argument to attributes:
+
+- `**kwargs` can be thought of as a double pointer to a dictionary: key/value
+-     As Python doesn’t have pointers, `**kwargs` is not literally a double pointer – describing it as such is just a way of explaining its behavior in terms you’re already familiar with
+- `**kwargs` must be skipped if `*args` exists and is not empty
+- Each key in this dictionary represents an attribute to the instance
+
+This type of argument is called a “key-worded argument”. Argument order is not important.
+```sh
+
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0C-python-almost_a_circle$ cat 8-main.py
+#!/usr/bin/python3
+""" 8-main """
+from models.rectangle import Rectangle
+
+if __name__ == "__main__":
+
+    r1 = Rectangle(10, 10, 10, 10)
+    print(r1)
+
+    r1.update(height=1)
+    print(r1)
+
+    r1.update(width=1, x=2)
+    print(r1)
+
+    r1.update(y=1, width=2, x=3, id=89)
+    print(r1)
+
+    r1.update(x=1, height=2, y=3, width=4)
+    print(r1)
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0C-python-almost_a_circle$ ./8-main.py
+[Rectangle] (1) 10/10 - 10/10
+[Rectangle] (1) 10/10 - 10/1
+[Rectangle] (1) 2/10 - 1/1
+[Rectangle] (89) 3/1 - 2/1
+[Rectangle] (89) 1/3 - 4/2
+
+```
+File: `models/rectangle.py`
+
+10. And now, the Square!
+Write the class `Square` that inherits from `Rectangle`:
+
+- In the file `models/square.py`
+- Class `Square` inherits from `Rectangle`
+- Class constructor: `def __init__(self, size, x=0, y=0, id=None):`:
+        Call the super class with `id`, `x`, `y`, `width` and `height` - this super call will use the logic of the `__init__` of the `Rectangle` class. The `width` and `height` must be assigned to the value of `size`
+        You must not create new attributes for this class, use all attributes of `Rectangle` - As reminder: a Square is a Rectangle with the same width and height
+        All `width`, `height`, `x` and `y` validation must inherit from `Rectangle` - same behavior in case of wrong data
+- The overloading __str__ method should return `[Square] (<id>) <x>/<y> - <size> `- in our case, `width` or `height`
+
+As you know, a Square is a special Rectangle, so it makes sense this class Square inherits from Rectangle. Now you have a Square class who has the same attributes and same methods.
+```sh
+
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0C-python-almost_a_circle$ cat 9-main.py
+#!/usr/bin/python3
+""" 9-main """
+from models.square import Square
+
+if __name__ == "__main__":
+
+    s1 = Square(5)
+    print(s1)
+    print(s1.area())
+    s1.display()
+
+    print("---")
+
+    s2 = Square(2, 2)
+    print(s2)
+    print(s2.area())
+    s2.display()
+
+    print("---")
+
+    s3 = Square(3, 1, 3)
+    print(s3)
+    print(s3.area())
+    s3.display()
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0C-python-almost_a_circle$ ./9-main.py
+[Square] (1) 0/0 - 5
+25
+#####
+#####
+#####
+#####
+#####
+---
+[Square] (2) 2/0 - 2
+4
+  ##
+  ##
+---
+[Square] (3) 1/3 - 3
+9
+
+
+
+ ###
+ ###
+ ###
+
+```
+File: `models/square.py`
+
+11. Square size
+Update the class `Square` by adding the public getter and setter `size`
+
+- The setter should assign (in this order) the `width` and the `height` - with the same value
+- The setter should have the same value validation as the `Rectangle` for `width` and `height` - No need to change the exception error message (It should be the one from `width`)
+```sh
+
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0C-python-almost_a_circle$ cat 10-main.py
+#!/usr/bin/python3
+""" 10-main """
+from models.square import Square
+
+if __name__ == "__main__":
+
+    s1 = Square(5)
+    print(s1)
+    print(s1.size)
+    s1.size = 10
+    print(s1)
+
+    try:
+        s1.size = "9"
+    except Exception as e:
+        print("[{}] {}".format(e.__class__.__name__, e))
+stevecmd@DESKTOP-UTB295U:~/alx-higher_level_programming/0x0C-python-almost_a_circle$ ./10-main.py
+[Square] (1) 0/0 - 5
+5
+[Square] (1) 0/0 - 10
+[TypeError] width must be an integer
+
+```
+File: `models/square.py`
