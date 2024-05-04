@@ -1,4 +1,11 @@
 #!/usr/bin/python3
+"""Defines a function that prints names.
+
+    Raises:
+        TypeError: If either of first_name or last_name are not strings.
+    """
+
+
 def say_my_name(first_name, last_name=""):
     """Defines a function that prints names.
 
