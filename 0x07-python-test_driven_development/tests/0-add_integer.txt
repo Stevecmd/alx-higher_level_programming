@@ -5,6 +5,12 @@ Usage of 0-add_integer.py
 # Importing the add_integer function from the 0-add_integer.py module
 >>> add_integer = __import__('0-add_integer').add_integer
 
+# Checking if the function is documented
+>>> 'add_integer' in dir(__import__('0-add_integer'))
+True
+>>> __import__('0-add_integer').add_integer.__doc__ is not None
+True
+
 # Test case 1: Both integers
 >>> add_integer(2, 3)
 5
