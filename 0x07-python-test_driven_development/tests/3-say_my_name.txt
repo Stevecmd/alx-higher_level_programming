@@ -20,8 +20,14 @@ Traceback (most recent call last):
     ...
 TypeError: first_name must be a string
 
-# Test case: Invalid last name (list)
+# Test case 4: Invalid last name (list)
 >>> say_my_name("LeBronz", ["Cavs", "Lakers", "Heat"])
 Traceback (most recent call last):
     ...
 TypeError: last_name must be a string
+
+# Test case 4: Missing first name
+>>> say_my_name()
+Traceback (most recent call last):
+    ...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
