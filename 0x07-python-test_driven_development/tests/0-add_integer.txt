@@ -84,3 +84,27 @@ TypeError: a must be an integer
 Traceback (most recent call last):
     ...
 ValueError: cannot convert float NaN to integer
+
+# Test case 20: expects that both arguments are either integers or floats
+>>> add_integer("hello", 4)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+# Test case 21: expects that both arguments are either integers or floats
+>>> add_integer(4, "hello")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+# Test case 21: cannot convert float NaN to integer
+>>> add_integer(float('nan'))
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
+
+# Test case 21: cannot convert float NaN to integer
+>>> add_integer(4, float('nan'))
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
