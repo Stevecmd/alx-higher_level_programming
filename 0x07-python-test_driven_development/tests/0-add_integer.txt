@@ -68,3 +68,19 @@ Usage of 0-add_integer.py
 # Test case 16: Adding a large positive float and a large positive integer
 >>> add_integer(1000000.5, 2000000)
 3000000
+
+# Test case 17: Check type - Passing a non-integer/non-float value
+>>> add_integer('2', 3)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+# Test case 18: Float overflow - Adding very large floats
+>>> add_integer(1e100, 1e100)
+20000000000000000318057822195198360936721617127890562779562655115495677544340762121626939971713630208
+
+# Test case 19: Cannot convert float NaN to integer - Adding NaN to an integer
+>>> add_integer(float('nan'), 5)
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
