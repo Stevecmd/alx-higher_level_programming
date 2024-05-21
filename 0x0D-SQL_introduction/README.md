@@ -450,7 +450,63 @@ File: `16-no_link.sql`
 My commands:
 ```sh
 
+sudo apt-get install mysql-server
 sudo service mysql start
 sudo service mysql stop
+sudo service mysql status
+sudo tail -n 50 /var/log/mysql/error.log
+grep mysql /etc/passwd
+
+```
+
+Uninstall MySQL:
+```sh
+
+sudo apt-get remove --purge mysql-server mysql-client mysql-common
+sudo apt-get autoremove
+sudo apt-get autoclean
+sudo rm -rf /etc/mysql /var/lib/mysql /var/log/mysql
+
+```
+Check if any MySQL processes are still running and terminate them if necessary:
+
+```sh
+
+ps aux | grep mysql
+
+```
+
+If you find any MySQL processes, terminate them using their process IDs (PID):
+```sh
+
+sudo kill -9 <PID>
+
+```
+Example command sequence:
+```sh
+
+# Stop MySQL service
+sudo service mysql stop
+
+# Verify no MySQL processes are running
+ps aux | grep mysql
+
+# If necessary, kill any remaining MySQL processes
+# (Replace <PID> with the actual process IDs)
+sudo kill -9 <PID>
+
+# Change MySQL user's home directory
+sudo usermod -d /var/lib/mysql mysql
+
+# Verify change
+grep mysql /etc/passwd
+
+# Ensure correct ownership and permissions
+sudo chown -R mysql:mysql /var/lib/mysql
+sudo chmod -R 755 /var/lib/mysql
+
+# Start MySQL service
+sudo service mysql start
+
 
 ```
