@@ -261,10 +261,12 @@ Write a script that lists all rows of the table `first_table` from the database 
 - All fields should be printed
 - The database name will be passed as an argument of the `mysql` command
 
+```sh
 
+root@356e29ffef03:/alx-higher_level_programming/0x0D-SQL_introduction# cat 6-list_values.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+Enter password:
 
-
-
+```
 File: `6-list_values.sql`
 
 7. First add
@@ -275,9 +277,26 @@ Write a script that inserts a new row in the table `first_table` (database `hbtn
     - `name` = `Best School`
 - The database name will be passed as an argument of the `mysql` command
 
+```sh
 
+root@356e29ffef03:/alx-higher_level_programming/0x0D-SQL_introduction# cat 7-insert_value.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+Enter password: 
+root@356e29ffef03:/alx-higher_level_programming/0x0D-SQL_introduction# cat 6-list_values.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+Enter password: 
+id      name
+89      Best School
+root@356e29ffef03:/alx-higher_level_programming/0x0D-SQL_introduction# cat 7-insert_value.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+Enter password: 
+root@356e29ffef03:/alx-higher_level_programming/0x0D-SQL_introduction# cat 7-insert_value.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+Enter password: 
+root@356e29ffef03:/alx-higher_level_programming/0x0D-SQL_introduction# cat 6-list_values.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+Enter password: 
+id      name
+89      Best School
+89      Best School
+89      Best School
 
-
+```
 
 File: `7-insert_value.sql`
 
@@ -286,11 +305,13 @@ Write a script that displays the number of records with `id = 89` in the table `
 
 - The database name will be passed as an argument of the `mysql` command
 
+```sh
 
+root@356e29ffef03:/alx-higher_level_programming/0x0D-SQL_introduction# cat 8-count_89.sql | mysql -hlocalhost -uroot -p hbtn_0c_0 | tail -1
+Enter password: 
+3
 
-
-
-
+```
 File: `8-count_89.sql`
 
 9. Full creation
@@ -309,10 +330,12 @@ Write a script that creates a table second_table in the database hbtn_0c_0 in yo
     - `id` = 3, `name` = “Bob”, `score` = 14
     - `id` = 4, `name` = “George”, `score` = 8
 
+```sh
 
+root@356e29ffef03:/alx-higher_level_programming/0x0D-SQL_introduction# cat 9-full_creation.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+Enter password: 
 
-
-
+```
 
 File: `9-full_creation.sql`
 
@@ -323,10 +346,17 @@ Write a script that lists all records of the table `second_table` of the databas
 - Records should be ordered by score (top first)
 - The database name will be passed as an argument of the `mysql` command
 
+```sh
 
+root@356e29ffef03:/alx-higher_level_programming/0x0D-SQL_introduction# cat 10-top_score.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+Enter password: 
+score   name
+14      Bob
+10      John
+8       George
+3       Alex
 
-
-
+```
 File: `10-top_score.sql`
 
 11. Select the best
