@@ -213,7 +213,6 @@ user
 
 ```
 
-
 File: `3-list_tables.sql`
 
 4. First table
