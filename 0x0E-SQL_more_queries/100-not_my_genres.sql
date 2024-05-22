@@ -5,15 +5,14 @@
 SELECT tv_genres.name
 FROM tv_genres
 
--- Left join with tv_shows_genres to find linked genres
-LEFT JOIN tv_shows_genres ON tv_genres.id = tv_shows_genres.genre_id
+-- Left join with tv_show_genres to find linked genres
+LEFT JOIN tv_show_genres ON tv_genres.id = tv_show_genres.genre_id
 
 -- Left join with tv_shows to find genres associated with the show "Dexter"
-LEFT JOIN tv_shows ON tv_shows_genres.show_id = tv_shows.id
+LEFT JOIN tv_shows ON tv_show_genres.show_id = tv_shows.id AND tv_shows.title = 'Dexter'
 
 -- Filter out genres linked to "Dexter"
-WHERE tv_shows.title = 'Dexter'
-AND tv_shows.id IS NULL
+WHERE tv_shows.id IS NULL
 
 -- Order results by genre name in ascending order
-ORDER BY tv_genres.name ASC;
+ORDER BY tv_genres.name;
