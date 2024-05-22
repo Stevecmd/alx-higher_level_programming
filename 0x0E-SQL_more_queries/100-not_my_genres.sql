@@ -16,4 +16,4 @@ WHERE tv_shows.title = 'Dexter'
 AND tv_shows.id IS NULL
 
 -- Order results by genre name in ascending order
-ORDER BY tv_genres.name;
+ORDER BY tv_genres.name ASC;
