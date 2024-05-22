@@ -638,24 +638,211 @@ The Last Man on Earth   Drama
 File: `16-shows_by_genre.sql`
 
 
+17. Not my genre
 
+Import the database dump from `hbtn_0d_tvshows` to your MySQL server: `download` (same as `16-shows_by_genre.sql`)
 
+Write a script that uses the `hbtn_0d_tvshows` database to list all genres not linked to the show `Dexter`
 
+- The `tv_shows` table contains only one record where `title = Dexter` (but the id can be different)
+- Each record should display: `tv_genres.name`
+- Results must be sorted in ascending order by the genre name
+- You can use a maximum of two `SELECT` statement
+- The database name will be passed as an argument of the `mysql` command
 
+```sh
 
+root@356e29ffef03:/alx-higher_level_programming/0x0E-SQL_more_queries# cat 100-not_my_genres.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+Enter password: 
+name
+Adventure
+Comedy
+Comedy
+Comedy
+Comedy
+Crime
+Drama
+Drama
+Drama
+Drama
+Fantasy
+Mystery
+Suspense
+Thriller
 
+```
 
+File: `100-not_my_genres.sql`
 
+18. No Comedy tonight!
+Import the database dump from `hbtn_0d_tvshows` to your MySQL server: download (same as `100-not_my_genres.sql`)
 
+Write a script that lists all shows without the genre Comedy in the database `hbtn_0d_tvshows`.
 
+- The `tv_genres` table contains only one record where `name` = `Comedy` (but the id can be different)
+- Each record should display: `tv_shows.title`
+- Results must be sorted in ascending order by the show title
+- You can use a maximum of two `SELECT` statement
+- The database name will be passed as an argument of the `mysql` command
 
+```sh
 
+root@356e29ffef03:/alx-higher_level_programming/0x0E-SQL_more_queries# cat 101-not_a_comedy.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
+Enter password: 
+title
+Better Call Saul
+Breaking Bad
+Breaking Bad
+Breaking Bad
+Breaking Bad
+Dexter
+Dexter
+Dexter
+Dexter
+Dexter
+Game of Thrones
+Game of Thrones
+Game of Thrones
+Homeland
+House
+House
+The Last Man on Earth
 
+```
+File: `101-not_a_comedy.sql`
 
+19. Rotten tomatoes
 
+Import the database `hbtn_0d_tvshows_rate` dump to your MySQL server:
 
+Write a script that lists all shows from `hbtn_0d_tvshows_rate` by their rating.
 
+- Each record should display: `tv_shows.title` - rating sum
+- Results must be sorted in descending order by the rating
+- You can use only one `SELECT` statement
+- The database name will be passed as an argument of the `mysql` command
+
+```sh
+root@356e29ffef03:/alx-higher_level_programming/0x0E-SQL_more_queries# mysql -uroot -p hbtn_0d_tvshows_rate < hbtn_0d_tvshows_rate.sql
+Enter password: 
+ERROR 1049 (42000): Unknown database 'hbtn_0d_tvshows_rate'
+root@356e29ffef03:/alx-higher_level_programming/0x0E-SQL_more_queries# mysql -uroot -p hbtn_0d_tvshows_rate < hbtn_0d_tvshows_rate.sql
+Enter password: 
+ERROR 1049 (42000): Unknown database 'hbtn_0d_tvshows_rate'
+root@356e29ffef03:/alx-higher_level_programming/0x0E-SQL_more_queries# mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 78
+Server version: 8.0.28-0ubuntu0.20.04.3 (Ubuntu)
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE hbtn_0d_tvshows_rate;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SHOW DATABASES;
++----------------------+
+| Database             |
++----------------------+
+| hbtn_0c_0            |
+| hbtn_0d_2            |
+| hbtn_0d_tvshows      |
+| hbtn_0d_tvshows_rate |
+| hbtn_0d_usa          |
+| information_schema   |
+| mysql                |
+| performance_schema   |
+| sys                  |
++----------------------+
+9 rows in set (0.01 sec)
+
+mysql> 
+mysql> exit;
+Bye
+
+```
+Manual table creation:
+
+```sh
+
+mysql> USE hbtn_0d_tvshows_rate;
+Database changed
+mysql> 
+mysql> -- Create the tv_shows table
+mysql> CREATE TABLE `tv_shows` (
+    ->   `id` int(11) NOT NULL AUTO_INCREMENT,
+    ->   `title` varchar(256) NOT NULL,
+    ->   PRIMARY KEY (`id`)
+    -> ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+mysql> 
+mysql> -- Create the tv_show_ratings table with foreign key constraint
+mysql> CREATE TABLE `tv_show_ratings` (
+    ->   `show_id` int(11) NOT NULL,
+    ->   `rate` int(11) NOT NULL DEFAULT '0',
+    ->   KEY `show_id` (`show_id`),
+    ->   CONSTRAINT `tv_show_ratings_ibfk_1` FOREIGN KEY (`show_id`) REFERENCES `tv_shows` (`id`)
+    -> ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+Query OK, 0 rows affected, 2 warnings (0.03 sec)
+
+```
+
+```sh
+
+guillaume@ubuntu:~/$ cat 102-rating_shows.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows_rate
+Enter password: 
+title   rating
+Better Call Saul    163
+Homeland    145
+Silicon Valley  82
+Game of Thrones 79
+Dexter  24
+House   21
+Breaking Bad    16
+The Last Man on Earth   10
+The Big Bang Theory 0
+New Girl    0
+
+```
+
+File: `102-rating_shows.sql`
+
+20. Best genre
+Import the database dump from `hbtn_0d_tvshows_rate` to your MySQL server: download (same as 102-rating_shows.sql)
+
+Write a script that lists all genres in the database `hbtn_0d_tvshows_rate` by their rating.
+
+- Each record should display: `tv_genres.name` - `rating sum`
+- Results must be sorted in descending order by their rating
+- You can use only one `SELECT` statement
+- The database name will be passed as an argument of the `mysql` command
+
+```sh
+
+guillaume@ubuntu:~/$ cat 103-rating_genres.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows_rate
+Enter password: 
+name    rating
+Drama   150
+Comedy  92
+Adventure   79
+Fantasy 79
+Mystery 45
+Crime   40
+Suspense    40
+Thriller    40
+
+```
+File: `103-rating_genres.sql`
 
 
 
 [Download SQL File](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/hbtn_0d_tvshows.sql)
+
+[Download TV shows rate](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/hbtn_0d_tvshows_rate.sql)
