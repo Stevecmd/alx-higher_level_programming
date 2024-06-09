@@ -216,6 +216,11 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(output[0].to_dictionary(), s1.to_dictionary())
         self.assertEqual(output[1].to_dictionary(), s2.to_dictionary())
 
+    def test_str_method(self):
+        """Test the __str__ method"""
+        s = Square(4, 2, 1, 12)
+        self.assertEqual(str(s), "[Square] (12) 2/1 - 4")
+
 
 if __name__ == "__main__":
     unittest.main()
