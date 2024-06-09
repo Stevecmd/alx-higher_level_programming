@@ -5,6 +5,8 @@ import unittest
 from models.square import Square
 import sys
 import os
+import json
+import tempfile
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
@@ -176,6 +178,43 @@ class TestSquare(unittest.TestCase):
     def test_load_from_file_exist_method_exists(self):
         """Test the existence of the load_from_file() method if file exists"""
         self.assertTrue(hasattr(Square, 'load_from_file'))
+
+    def test_save_to_file_none(self):
+        """Test the existence of the save_to_file(None) method"""
+        Square.save_to_file(None)
+        with open("Square.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
+
+    def test_save_to_file_empty_list(self):
+        """Test the existence of the save_to_file([]) method"""
+        Square.save_to_file([])
+        with open("Square.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
+
+    def test_save_to_file_square_1(self):
+        """Test the existence of the save_to_file([Square(1)]) method"""
+        s = Square(1)
+        Square.save_to_file([s])
+        with open("Square.json", "r") as file:
+            expected_output = [s.to_dictionary()]
+            self.assertEqual(json.load(file), expected_output)
+
+    def test_load_from_file_not_exist(self):
+        """Test the existence of load_from_file() method if no file"""
+        if os.path.exists("Square.json"):
+            os.remove("Square.json")
+        output = Square.load_from_file()
+        self.assertEqual(output, [])
+
+    def test_load_from_file_exist(self):
+        """Test the existence of the load_from_file() method if file exists"""
+        s1 = Square(1, 2, 3, 4)
+        s2 = Square(5, 6, 7, 8)
+        Square.save_to_file([s1, s2])
+        output = Square.load_from_file()
+        self.assertEqual(len(output), 2)
+        self.assertEqual(output[0].to_dictionary(), s1.to_dictionary())
+        self.assertEqual(output[1].to_dictionary(), s2.to_dictionary())
 
 
 if __name__ == "__main__":
