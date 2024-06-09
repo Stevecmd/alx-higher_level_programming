@@ -6,6 +6,8 @@ from models.base import Base
 import unittest
 import sys
 import os
+import io
+from unittest.mock import patch
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
@@ -182,6 +184,81 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(hasattr(r, 'update'))
         r.update(**{'id': 89})
         self.assertEqual(r.id, 89)
+
+    def test_area(self):
+        """Test the area() method"""
+        r = Rectangle(3, 4)
+        self.assertEqual(r.area(), 12)
+
+    def test_str_method(self):
+        """Test the __str__ method"""
+        r = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(str(r), "[Rectangle] (12) 2/1 - 4/6")
+
+    def test_display_no_xy(self):
+        """Test display() method without x and y"""
+        r = Rectangle(4, 6)
+        expected_output = "####\n####\n####\n####\n####\n####\n"
+        with unittest.mock.patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
+            r.display()
+            self.assertEqual(mock_stdout.getvalue(), expected_output)
+
+    def test_display_no_y(self):
+        """Test display() method without y"""
+        r = Rectangle(3, 2, 1)
+        expected_output = " ###\n ###\n"
+        with unittest.mock.patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
+            r.display()
+            self.assertEqual(mock_stdout.getvalue(), expected_output)
+
+    def test_display(self):
+        """Test display() method"""
+        r = Rectangle(2, 3, 2, 2)
+        expected_output = "\n\n  ##\n  ##\n  ##\n"
+        with unittest.mock.patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
+            r.display()
+            self.assertEqual(mock_stdout.getvalue(), expected_output)
+
+    def test_to_dictionary(self):
+        """Test the to_dictionary() method"""
+        r = Rectangle(10, 2, 1, 9)
+        r_dict = r.to_dictionary()
+        expected_dict = {'id': r.id, 'width': 10, 'height': 2, 'x': 1, 'y': 9}
+        self.assertEqual(r_dict, expected_dict)
+
+    def test_save_to_file_none(self):
+        """Test save_to_file with None"""
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), '[]')
+
+    def test_save_to_file_empty_list(self):
+        """Test save_to_file with an empty list"""
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), '[]')
+
+    def test_save_to_file(self):
+        """Test save_to_file with a list containing one Rectangle"""
+        r = Rectangle(10, 7, 2, 8, 5)
+        Rectangle.save_to_file([r])
+        with open("Rectangle.json", "r") as file:
+            expected_output = '[{"id": 5, "width": 10, "height": 7, "x": 2, "y": 8}]'
+            self.assertEqual(file.read(), expected_output)
+
+    def test_load_from_file_no_file(self):
+        """Test load_from_file when file doesn't exist"""
+        if os.path.exists("Rectangle.json"):
+            os.remove("Rectangle.json")
+        self.assertEqual(Rectangle.load_from_file(), [])
+
+    def test_load_from_file(self):
+        """Test load_from_file when file exists"""
+        r = Rectangle(10, 7, 2, 8, 5)
+        Rectangle.save_to_file([r])
+        rectangles = Rectangle.load_from_file()
+        self.assertEqual(len(rectangles), 1)
+        self.assertEqual(str(rectangles[0]), str(r))
 
 
 if __name__ == "__main__":
