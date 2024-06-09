@@ -39,6 +39,23 @@ class TestSquare(unittest.TestCase):
         s = Square(1, 2)
         self.assertIsNotNone(s)
 
+    def test_square_num_1_string_2(self):
+        """Test Square(1, "2") raises TypeError"""
+        with self.assertRaises(TypeError):
+            Square(1, "2")
+
+    def test_square_num_1_2_3(self):
+        """Test Square(1, 2, 3)"""
+        s = Square(1, 2, 3)
+        self.assertIsNotNone(s)
+        self.assertEqual(s.size, 1)
+        self.assertEqual(s.x, 2)
+        self.assertEqual(s.y, 3)
+        # Check that the area is calculated correctly
+        self.assertEqual(s.area(), 1)
+        # Ensure the string representation is as expected (if __str__ is implemented)
+        self.assertEqual(str(s), "[Square] ({}) 2/3 - 1".format(s.id))
+
     def test_square_1_2_string_3(self):
         """Test Square(1, 2, "3")"""
         s = Square(1, 2, 3)
