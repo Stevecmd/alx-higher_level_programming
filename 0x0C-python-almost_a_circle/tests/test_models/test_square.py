@@ -22,6 +22,16 @@ class TestSquare(unittest.TestCase):
         s = Square(4, 2, 1, 12)
         self.assertEqual(str(s), "[Square] (12) 2/1 - 4")
 
+    def test_square_num_1_2(self):
+        """Test Square(1, 2)"""
+        s = Square(1, 2)
+        self.assertIsNotNone(s)
+        self.assertEqual(s.size, 1)
+        self.assertEqual(s.x, 2)
+        self.assertEqual(s.y, 0)
+        self.assertEqual(s.area(), 1)
+        self.assertEqual(str(s), "[Square] ({}) 2/0 - 1".format(s.id))
+
     def test_square_1_2_3_4(self):
         """Test Square(1, 2, 3, 4)"""
         s = Square(1, 2, 3, 4)
