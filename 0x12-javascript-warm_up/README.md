@@ -36,11 +36,11 @@ Write a script that prints “JavaScript is amazing”:
 - You are not allowed to use `var`
 ```sh
 
-guillaume@ubuntu:~/0x12$ ./0-javascript_is_amazing.js 
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./0-javascript_is_amazing.js 
 JavaScript is amazing
-guillaume@ubuntu:~/0x12$ 
-guillaume@ubuntu:~/0x12$ semistandard ./0-javascript_is_amazing.js 
-guillaume@ubuntu:~/0x12$ 
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# 
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# semistandard ./0-javascript_is_amazing.js 
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# 
 
 ```
 File: `0-javascript_is_amazing.js`
@@ -56,11 +56,11 @@ Write a script that prints 3 lines:
 
 ```sh
 
-guillaume@ubuntu:~/0x12$ ./1-multi_languages.js 
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./1-multi_languages.js 
 C is fun
 Python is cool
 JavaScript is amazing
-guillaume@ubuntu:~/0x12$ 
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# 
 
 ```
 File: `1-multi_languages.js`
@@ -76,11 +76,11 @@ Write a script that prints a message depending of the number of arguments passed
 
 ```sh
 
-guillaume@ubuntu:~/0x12$ ./2-arguments.js 
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./2-arguments.js 
 No argument
-guillaume@ubuntu:~/0x12$ ./2-arguments.js Best
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./2-arguments.js Best
 Argument found
-guillaume@ubuntu:~/0x12$ ./2-arguments.js Best School
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./2-arguments.js Best School
 Arguments found
 
 ```
@@ -95,9 +95,9 @@ Write a script that prints the first argument passed to it:
 - You are not allowed to use `length`
 ```sh
 
-guillaume@ubuntu:~/0x12$ ./3-value_argument.js 
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./3-value_argument.js 
 No argument
-guillaume@ubuntu:~/0x12$ ./3-value_argument.js School
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./3-value_argument.js School
 School
 
 ```
@@ -111,11 +111,11 @@ Write a script that prints two arguments passed to it, in the following format: 
 
 ```sh
 
-guillaume@ubuntu:~/0x12$ ./4-concat.js c cool
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./4-concat.js c cool
 c is cool
-guillaume@ubuntu:~/0x12$ ./4-concat.js c 
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./4-concat.js c 
 c is undefined
-guillaume@ubuntu:~/0x12$ ./4-concat.js
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./4-concat.js
 undefined is undefined
 
 ```
@@ -130,15 +130,15 @@ Write a script that prints `My number: <first argument converted in integer>` if
 - You are not allowed to use `try/catch`
 ```sh
 
-guillaume@ubuntu:~/0x12$ ./5-to_integer.js 
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./5-to_integer.js 
 Not a number
-guillaume@ubuntu:~/0x12$ ./5-to_integer.js 89
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./5-to_integer.js 89
 My number: 89
-guillaume@ubuntu:~/0x12$ ./5-to_integer.js "89"
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./5-to_integer.js "89"
 My number: 89
-guillaume@ubuntu:~/0x12$ ./5-to_integer.js 89.89
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./5-to_integer.js 89.89
 My number: 89
-guillaume@ubuntu:~/0x12$ ./5-to_integer.js School
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./5-to_integer.js School
 Not a number
 
 ```
@@ -157,7 +157,7 @@ Write a script that prints 3 lines: (like `1-multi_languages.js`) but by using a
 - You must use a loop (`while`, `for`, etc.)
 ```sh
 
-guillaume@ubuntu:~/0x12$ ./6-multi_languages_loop.js 
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./6-multi_languages_loop.js 
 C is fun
 Python is cool
 JavaScript is amazing
@@ -177,18 +177,18 @@ Write a script that prints `x` times “C is fun”
 
 ```sh
 
-guillaume@ubuntu:~/0x12$ ./7-multi_c.js 2
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./7-multi_c.js 2
 C is fun
 C is fun
-guillaume@ubuntu:~/0x12$ ./7-multi_c.js 5
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./7-multi_c.js 5
 C is fun
 C is fun
 C is fun
 C is fun
 C is fun
-guillaume@ubuntu:~/0x12$ ./7-multi_c.js 
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./7-multi_c.js 
 Missing number of occurrences
-guillaume@ubuntu:~/0x12$ ./7-multi_c.js -3
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./7-multi_c.js -3
 
 ```
 File: `7-multi_c.js`
@@ -205,21 +205,21 @@ Write a script that prints a square
 
 ```sh
 
-guillaume@ubuntu:~/0x12$ ./8-square.js
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./8-square.js
 Missing size
-guillaume@ubuntu:~/0x12$ ./8-square.js School
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./8-square.js School
 Missing size
-guillaume@ubuntu:~/0x12$ ./8-square.js 2
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./8-square.js 2
 XX
 XX
-guillaume@ubuntu:~/0x12$ ./8-square.js 6
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./8-square.js 6
 XXXXXX
 XXXXXX
 XXXXXX
 XXXXXX
 XXXXXX
 XXXXXX
-guillaume@ubuntu:~/0x12$ ./8-square.js -3
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./8-square.js -3
 
 ```
 File: `8-square.js`
@@ -235,13 +235,13 @@ Write a script that prints the addition of 2 integers
 
 ```sh
 
-guillaume@ubuntu:~/0x12$ ./9-add.js 
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./9-add.js 
 NaN
-guillaume@ubuntu:~/0x12$ ./9-add.js 1
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./9-add.js 1
 NaN
-guillaume@ubuntu:~/0x12$ ./9-add.js 1 7
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./9-add.js 1 7
 8
-guillaume@ubuntu:~/0x12$ ./9-add.js 13 89
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./9-add.js 13 89
 102
 
 ```
@@ -258,13 +258,13 @@ Write a script that computes and prints a factorial
 - You are not allowed to use `var`
 ```sh
 
-guillaume@ubuntu:~/0x12$ ./10-factorial.js 
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./10-factorial.js 
 1
-guillaume@ubuntu:~/0x12$ ./10-factorial.js 3
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./10-factorial.js 3
 6
-guillaume@ubuntu:~/0x12$ ./10-factorial.js 89
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./10-factorial.js 89
 1.6507955160908452e+136
-guillaume@ubuntu:~/0x12$ ./10-factorial.js 333
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./10-factorial.js 333
 Infinity
 
 ```
@@ -280,11 +280,11 @@ Write a script that searches the second biggest integer in the list of arguments
 - You are not allowed to use `var`
 ```sh
 
-guillaume@ubuntu:~/0x12$ ./11-second_biggest.js 
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./11-second_biggest.js 
 0
-guillaume@ubuntu:~/0x12$ ./11-second_biggest.js 1
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./11-second_biggest.js 1
 0
-guillaume@ubuntu:~/0x12$ ./11-second_biggest.js 4 2 5 3 0 -3
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./11-second_biggest.js 4 2 5 3 0 -3
 4
 
 ```
@@ -296,7 +296,7 @@ Update this script to replace the value `12` with `89`:
 - You are not allowed to use `var`
 ```sh
 
-guillaume@ubuntu:~/0x12$ cat 12-object.js
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# cat 12-object.js
 #!/usr/bin/node
 const myObject = {
   type: 'object',
@@ -308,7 +308,7 @@ YOUR CODE HERE
 */
 console.log(myObject);
 
-guillaume@ubuntu:~/0x12$ ./12-object.js
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./12-object.js
 { type: 'object', value: 12 }
 { type: 'object', value: 89 }
 
@@ -324,11 +324,11 @@ Write a function that returns the addition of 2 integers.
 
 ```sh
 
-guillaume@ubuntu:~/0x12$ cat 13-main.js
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# cat 13-main.js
 #!/usr/bin/node
 const add = require('./13-add').add;
 console.log(add(3, 5));
-guillaume@ubuntu:~/0x12$ ./13-main.js
+root@3c477a23731f:/alx-higher_level_programming/0x12-javascript-warm_up# ./13-main.js
 8
 
 ```
