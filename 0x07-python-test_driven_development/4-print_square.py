@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 def print_square(size):
     """Print a square with the # character.
-    
+
     Args:
         size (int): The height/width of the square.
-        
+
     Raises:
         TypeError: If size is not an integer.
         ValueError: If size is less than 0.
