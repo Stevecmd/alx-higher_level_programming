@@ -85,6 +85,11 @@ TypeError: a must be an integer
 >>> add_integer(1e100, 1e100)
 20000000000000000318057822195198360936721617127890562779562655115495677544340762121626939971713630208
 
+# Test case 18.2: Check for float overflow
+result = add_integer(1e300, 1e300)
+if result != float('inf'):
+  print("Float overflow not detected. This should be infinity.")
+
 # Test case 19: Cannot convert float NaN to integer - Adding NaN to an integer
 >>> add_integer(float('nan'), 5)
 Traceback (most recent call last):
