@@ -1,9 +1,19 @@
 #!/usr/bin/node
+
+// Import the 'fs' module for file system operations.
 const fs = require('fs');
 
-// Reading the contents of fileA and fileB
-const contentA = fs.readFileSync(process.argv[2]).toString();
-const contentB = fs.readFileSync(process.argv[3]).toString();
+// Read the content of the file specified by the first command-line argument,
+// and convert it to a string using the 'toString' method.
+const fArg = fs.readFileSync(process.argv[2]).toString();
 
-// Writing concatenated content to fileC
-fs.writeFileSync(process.argv[4], contentA + contentB + '\n');
+// Read the content of the file specified by the second command-line argument,
+// and convert it to a string using the 'toString' method.
+const sArg = fs.readFileSync(process.argv[3]).toString();
+
+// Write the concatenated content of the two input files to
+// the file specified by the third command-line argument.
+fs.writeFileSync(process.argv[4], fArg + sArg);
+
+// Ensure the output file ends with a new line
+fs.appendFileSync(process.argv[4], '\n');
