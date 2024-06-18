@@ -2,20 +2,9 @@
 
 const fs = require('fs');
 
-// Function to read contents of a file
-function readFile (filePath) {
-  return fs.readFileSync(filePath, 'utf8').trim();
-}
-
-// Command line arguments
-const [, , fileA, fileB, fileC] = process.argv;
-
 // Read contents of fileA and fileB
-const contentA = readFile(fileA);
-const contentB = readFile(fileB);
-
-// Concatenate contents of fileA and fileB with a newline in between
-const concatenatedContent = `${contentA}\n${contentB}\n`;
+const contentA = fs.readFileSync(process.argv[2]).toString();
+const contentB = fs.readFileSync(process.argv[3]).toString();
 
 // Write concatenated content to fileC
-fs.writeFileSync(fileC, concatenatedContent);
+fs.writeFileSync(process.argv[4], contentA + '\n' + contentB + '\n');
