@@ -1,8 +1,7 @@
 #!/usr/bin/node
-
 const fs = require('fs');
 
-// Read contents of fileA and fileB
+// Reading the contents of fileA and fileB
 const contentA = fs.readFileSync(process.argv[2]).toString();
 const contentB = fs.readFileSync(process.argv[3]).toString();
 
