@@ -21,5 +21,3 @@ const concatenatedContent = contentA.trim() + '\n' + contentB.trim() + '\n';
 
 // Write concatenated content to fileC
 fs.writeFileSync(fileC, concatenatedContent);
-
-// console.log(`Concatenation successful. Output written to ${fileC}`);
