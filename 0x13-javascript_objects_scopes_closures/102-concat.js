@@ -4,7 +4,7 @@ const fs = require('fs');
 
 // Function to read contents of a file
 function readFile (filePath) {
-  return fs.readFileSync(filePath, 'utf8').trim(); // Trim to remove any trailing newline
+  return fs.readFileSync(filePath, 'utf8').trim();
 }
 
 // Command line arguments
