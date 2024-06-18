@@ -34,6 +34,24 @@ Install semi-standard
 ```sh
 $ sudo npm install semistandard --global
 ```
+Example of `semistandard` in use:
+```sh
+
+stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x13-javascript_objects_scopes_closures$ semistandard ./1-rectangle.js 
+semistandard: Semicolons For All! (https://github.com/standard/semistandard)
+semistandard: Run `semistandard --fix` to automatically fix some problems.
+  /home/stevecmd/ALX/alx-higher_level_programming/0x13-javascript_objects_scopes_closures/1-rectangle.js:4:1: Expected indentation of 2 spaces but found 4. (indent)
+  /home/stevecmd/ALX/alx-higher_level_programming/0x13-javascript_objects_scopes_closures/1-rectangle.js:4:16: Missing space before function parentheses. (space-before-function-paren)
+  /home/stevecmd/ALX/alx-higher_level_programming/0x13-javascript_objects_scopes_closures/1-rectangle.js:5:1: Expected indentation of 4 spaces but found 6. (indent)
+  /home/stevecmd/ALX/alx-higher_level_programming/0x13-javascript_objects_scopes_closures/1-rectangle.js:6:1: Expected indentation of 4 spaces but found 6. (indent)
+  /home/stevecmd/ALX/alx-higher_level_programming/0x13-javascript_objects_scopes_closures/1-rectangle.js:7:1: Expected indentation of 2 spaces but found 4. (indent)
+  /home/stevecmd/ALX/alx-higher_level_programming/0x13-javascript_objects_scopes_closures/1-rectangle.js:8:1: Expected indentation of 0 spaces but found 2. (indent)
+  /home/stevecmd/ALX/alx-higher_level_programming/0x13-javascript_objects_scopes_closures/1-rectangle.js:9:1: Trailing spaces not allowed. (no-trailing-spaces)
+  /home/stevecmd/ALX/alx-higher_level_programming/0x13-javascript_objects_scopes_closures/1-rectangle.js:10:1: Expected indentation of 0 spaces but found 2. (indent)
+stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x13-javascript_objects_scopes_closures$ semistandard --fix ./1-rectangle.js 
+stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x13-javascript_objects_scopes_closures$ semistandard ./1-rectangle.js 
+
+```
 
 [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 
