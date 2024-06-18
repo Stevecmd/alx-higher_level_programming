@@ -34,6 +34,9 @@ Install semi-standard
 ```sh
 $ sudo npm install semistandard --global
 ```
+
+[Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+
 ## Tasks
 0. Rectangle #0
 Write an empty class `Rectangle` that defines a rectangle:
