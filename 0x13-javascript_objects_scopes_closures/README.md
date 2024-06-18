@@ -450,3 +450,68 @@ c
 ```
 
 File: `10-converter.js`
+
+11. Factor index
+Write a script that imports an array and computes a new array.
+
+  - Your script must import `list` from the file `100-data.js`
+  - You must use a `map`. [Tips](https://intranet.alxswe.com/rltoken/LOEW51ZbYDjO4KZCFevzNQ)
+  - A new list must be created with each value equal to the value of the initial list, multipled by the index in the list
+  - Print both the initial list and the new list
+```sh
+
+stevecmd@DESKTOP-UTB295U:$ cat 100-data.js
+#!/usr/bin/node
+exports.list = [1, 2, 3, 4, 5];
+stevecmd@DESKTOP-UTB295U:$ ./100-map.js 
+[ 1, 2, 3, 4, 5 ]
+[ 0, 2, 6, 12, 20 ]
+
+```
+File: `100-map.js`
+
+12. Sorted occurences
+Write a script that imports a dictionary of occurrences by user id and computes a dictionary of user ids by occurrence.
+
+- Your script must import dict from the file 101-data.js
+- In the new dictionary:
+    - A key is a number of occurrences
+    - A value is the list of user ids
+- Print the new dictionary at the end
+```sh
+
+stevecmd@DESKTOP-UTB295U:$ cat 101-data.js
+#!/usr/bin/node
+exports.dict = {
+  89: 1,
+  90: 2,
+  91: 1,
+  92: 3,
+  93: 1,
+  94: 2
+};
+stevecmd@DESKTOP-UTB295U:$ ./101-sorted.js 
+{ '1': [ '89', '91', '93' ], '2': [ '90', '94' ], '3': [ '92' ] }
+
+```
+File: `101-sorted.js`
+
+13. Concat files
+Write a script that concats 2 files.
+
+- The first argument is the file path of the first source file
+- The second argument is the file path of the second source file
+- The third argument is the file path of the destination
+```sh
+
+stevecmd@DESKTOP-UTB295U:$ cat fileA
+C is fun!
+stevecmd@DESKTOP-UTB295U:$ cat fileB
+Python is Cool!!!
+stevecmd@DESKTOP-UTB295U:$ ./102-concat.js fileA fileB fileC
+stevecmd@DESKTOP-UTB295U:$ cat fileC
+C is fun!
+Python is Cool!!!
+
+```
+File: `102-concat.js`
