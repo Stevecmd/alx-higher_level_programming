@@ -27,7 +27,35 @@ def filter_states(username, password, database, state_name):
         # Create a cursor object to interact with the database
         cur = db.cursor()
 
-        cur.execute("SELECT * \
-                    FROM `states` \
-                    WHERE BINARY `name` = '{}'".format(sys.argv[4]))
-        [print(state) for state in cur.fetchall()]
+        # Execute the SQL query with parameterized query
+        query = """
+        SELECT *
+        FROM states
+        WHERE BINARY name = %s
+        """
+        cur.execute(query, (state_name,))
+
+        # Fetch all the results and print them
+        states = cur.fetchall()
+        for state in states:
+            print(state)
+
+        # Close the cursor and database connection
+        cur.close()
+        db.close()
+
+    except MySQLdb.Error as e:
+        print(f"Error connecting to MySQL: {e}")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+
+    # Assign command line arguments to variables
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
+    state_name = sys.argv[4]
+
+    # Call the function with provided arguments
+    filter_states(username, password, database, state_name)
