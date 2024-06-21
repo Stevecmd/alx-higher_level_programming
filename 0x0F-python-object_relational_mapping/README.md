@@ -49,6 +49,47 @@ Indeed, all of them have the same type of syntax, but not always. Please read tu
 - How to map a Python Class to a MySQL table
 - How to create a Python Virtual Environment
 
+### More Info
+- Install and activate venv
+
+To create a Python Virtual Environment, allowing you to install specific dependencies for this python project, we will install venv:
+```sh
+$ sudo apt-get install python3.8-venv
+$ python3 -m venv venv
+$ source venv/bin/activate
+```
+- Install MySQLdb module version 2.0.x
+
+```sh
+(myenv) stevecmd@DESKTOP-UTB295U:~$ sudo apt-get install python3-dev
+(myenv) stevecmd@DESKTOP-UTB295U:~$ sudo apt-get install libmysqlclient-dev
+(myenv) stevecmd@DESKTOP-UTB295U:~$ sudo apt-get install zlib1g-dev
+(myenv) stevecmd@DESKTOP-UTB295U:~$ pip install mysqlclient
+
+```
+Confirm succesfull installation of MySQL in the virtual environment:
+
+``sh
+    (myenv) stevecmd@DESKTOP-UTB295U:~$ python3
+    Python 3.12.3 (main, Apr 10 2024, 05:33:47) [GCC 13.2.0] on linux
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> import MySQLdb
+    >>> MySQLdb.version_info 
+    (2, 2, 4, 'final', 0)
+```
+
+- Install SQLAlchemy module version 1.4.x
+```sh
+(myenv) stevecmd@DESKTOP-UTB295U:~$ pip install SQLAlchemy
+...
+(myenv) stevecmd@DESKTOP-UTB295U:~$ python3
+Python 3.12.3 (main, Apr 10 2024, 05:33:47) [GCC 13.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import sqlalchemy
+>>> sqlalchemy.__version__ 
+'2.0.31'
+```
+
 ## Requirements
 ### General
 
@@ -113,5 +154,72 @@ moved in a future release.")
 ```
 You can ignore it.
 
+#### Starting up MYSQL
+```sh
+
+root@094bfbccda27:/alx-higher_level_programming/0x0F-python-object_relational_mapping# sudo service mysql start
+ * Starting MySQL database server mysqld                                                                                                           [ OK ] 
+root@094bfbccda27:/alx-higher_level_programming/0x0F-python-object_relational_mapping# sudo service mysql status
+ * /usr/bin/mysqladmin  Ver 8.0.28-0ubuntu0.20.04.3 for Linux on x86_64 ((Ubuntu))
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Server version          8.0.28-0ubuntu0.20.04.3
+Protocol version        10
+Connection              Localhost via UNIX socket
+UNIX socket             /var/run/mysqld/mysqld.sock
+Uptime:                 42 sec
+
+Threads: 2  Questions: 8  Slow queries: 0  Opens: 117  Flush tables: 3  Open tables: 36  Queries per second avg: 0.190
+
+```
+
+#### Stopping MySQL
+```sh
+
+root@094bfbccda27:/alx-higher_level_programming/0x0F-python-object_relational_mapping# sudo service mysql stop
+ * Stopping MySQL database server mysqld 
+
+root@094bfbccda27:/alx-higher_level_programming/0x0F-python-object_relational_mapping# sudo service mysql status
+ * MySQL is stopped.
+
+```
+
 ## Tasks
 0. Get all states
+Write a script that lists all `states` from the database `hbtn_0e_0_usa`:
+
+- Your script should take 3 arguments: `mysql username`, `mysql password` and `database name` (no argument validation needed)
+- You must use the module `MySQLdb` (`import MySQLdb`)
+- Your script should connect to a MySQL server running on `localhost` at port `3306`
+- Results must be sorted in ascending order by `states.id`
+- Results must be displayed as they are in the example below
+- Your code should not be executed when imported
+
+```sh
+
+root@094bfbccda27:/alx-higher_level_programming/0x0F-python-object_relational_mapping# cat 0-select_states.sql
+-- Create states table in hbtn_0e_0_usa with some data
+CREATE DATABASE IF NOT EXISTS hbtn_0e_0_usa;
+USE hbtn_0e_0_usa;
+CREATE TABLE IF NOT EXISTS states ( 
+    id INT NOT NULL AUTO_INCREMENT, 
+    name VARCHAR(256) NOT NULL,
+    PRIMARY KEY (id)
+);
+INSERT INTO states (name) VALUES ("California"), ("Arizona"), ("Texas"), ("New York"), ("Nevada");
+
+root@094bfbccda27:/alx-higher_level_programming/0x0F-python-object_relational_mapping# cat 0-select_states.sql | mysql -uroot -p
+Enter password: 
+root@094bfbccda27:/alx-higher_level_programming/0x0F-python-object_relational_mapping# ./0-select_states.py root root hbtn_0e_0_usa
+(1, 'California')
+(2, 'Arizona')
+(3, 'Texas')
+(4, 'New York')
+(5, 'Nevada')
+
+```
+File: `0-select_states.py`
