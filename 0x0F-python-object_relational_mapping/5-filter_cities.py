@@ -6,12 +6,14 @@ Lists all cities of a specified state from the database hbtn_0e_4_usa.
 import MySQLdb
 import sys
 
+
 def filter_cities():
     """
     Connects to the MySQL database and lists
     all cities of the specified state.
     """
-    # Get MySQL credentials, database name, and state name from command-line arguments
+    # Get MySQL credentials, database name,
+    # and state name from command-line arguments
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
@@ -58,6 +60,7 @@ def filter_cities():
 
     except MySQLdb.Error as e:
         print(f"Error connecting to MySQL: {e}")
+
 
 if __name__ == "__main__":
     filter_cities()
