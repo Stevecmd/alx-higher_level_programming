@@ -26,8 +26,11 @@ if __name__ == "__main__":
         # Execute the SQL query with parameterized query
         name_pattern = sys.argv[4]
         query = (
-            "SELECT * FROM states WHERE name LIKE BINARY '{}'".format(name_pattern)
+            "SELECT * "
+            "FROM states "
+            "WHERE name LIKE BINARY '{}'".format(name_pattern)
         )
+
         cur.execute(query)
 
         # Fetch all the results and print them
