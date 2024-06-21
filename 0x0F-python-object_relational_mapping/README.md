@@ -90,6 +90,13 @@ Type "help", "copyright", "credits" or "license" for more information.
 '2.0.31'
 ```
 
+`empty-db.py` is a script to delete all content from the database `hbtn_0e_0_usa`
+```sh
+
+root@094bfbccda27:/alx-higher_level_programming/0x0F-python-object_relational_mapping# ./empty-db.py root root hbtn_0e_0_usa
+All content deleted from 'states' table in database 'hbtn_0e_0_usa'.
+
+```
 ## Requirements
 ### General
 

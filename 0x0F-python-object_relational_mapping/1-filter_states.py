@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 1-filter_states module
-Lists all states with a name starting with 'N' from the database hbtn_0e_0_usa
+Lists all unique states with a name starting with 'N' from the database hbtn_0e_0_usa
 """
 import MySQLdb
 import sys
@@ -10,7 +10,7 @@ import sys
 def filter_states():
     """
     Connects to the MySQL database and lists
-    all states with a name starting with 'N'.
+    all unique states with a name starting with 'N'.
     """
     # Get MySQL credentials and database name from command-line arguments
     username = sys.argv[1]
@@ -29,9 +29,9 @@ def filter_states():
     # Create a cursor object to interact with the database
     cur = db.cursor()
 
-    # Execute the SQL query to list states with names starting with 'N'
+    # Execute the SQL query to list unique states with names starting with 'N'
     query = """
-    SELECT id, name
+    SELECT DISTINCT id, name
     FROM states
     WHERE name LIKE 'N%'
     ORDER BY id ASC
