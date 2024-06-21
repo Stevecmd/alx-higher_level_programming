@@ -29,9 +29,6 @@ def filter_states():
     # Create a cursor object to interact with the database
     cur = db.cursor()
 
-    # Before executing the query
-    print(f"Connecting to MySQL database: {database}")
-
     # Execute the SQL query to list states with names starting with 'N'
     query = """
     SELECT id, name
