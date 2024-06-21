@@ -4,21 +4,15 @@
 Displays all values in the states table of
 hbtn_0e_0_usa where name matches the argument.
 """
-import MySQLdb
 import sys
+import MySQLdb
 
 
-def filter_states():
+def filter_states(username, password, database, state_name):
     """
     Connects to the MySQL database and displays
     all values in the states table where name matches the given argument.
     """
-
-    # Get MySQL credentials and database name from command-line arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-    state_name = sys.argv[4]
 
     try:
         # Connect to the MySQL server
@@ -57,4 +51,17 @@ def filter_states():
 
 
 if __name__ == "__main__":
-    filter_states()
+    # Check for correct number of arguments
+    if len(sys.argv) != 5:
+        print("Usage: ./2-my_filter_states.py <mysql username> "
+              "<mysql password> <database name> <state name>")
+        sys.exit(1)
+
+    # Assign command line arguments to variables
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
+    state_name = sys.argv[4]
+
+    # Call the function with provided arguments
+    filter_states(username, password, database, state_name)
