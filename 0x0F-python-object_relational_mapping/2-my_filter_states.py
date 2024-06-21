@@ -33,12 +33,8 @@ def filter_states():
         cur = db.cursor()
 
         # Execute the SQL query to find states with the exact given name
-        query = """
-        SELECT *
-        FROM states
-        WHERE name = %s
-        ORDER BY id ASC
-        """
+        query = "SELECT * FROM states WHERE name LIKE BINARY '{}' " \
+            "ORDER BY id ASC".format(user_input)
         cur.execute(query, (state_name,))
 
         # Fetch all the results and print them
