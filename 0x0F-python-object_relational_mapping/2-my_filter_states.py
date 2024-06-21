@@ -13,13 +13,6 @@ def filter_states():
     Connects to the MySQL database and displays
     all values in the states table where name matches the given argument.
     """
-    # Check if all necessary arguments are provided
-    if len(sys.argv) != 5:
-        print("Usage: ./2-my_filter_states.py "
-              "<username> <password> <database> <state_name>")
-
-        return
-
     # Get MySQL credentials and database name from command-line arguments
     username = sys.argv[1]
     password = sys.argv[2]
@@ -41,7 +34,7 @@ def filter_states():
 
         # Execute the SQL query to find states with the given name
         query = """
-        SELECT id, name
+        SELECT *
         FROM states
         WHERE name = %s
         ORDER BY id ASC
