@@ -55,4 +55,8 @@ def filter_states():
 
 
 if __name__ == "__main__":
+    if len(sys.argv) != 5:
+        print("Usage: ./2-my_filter_states.py "
+              "<username> <password> <database> <state_name>")
+        sys.exit(1)
     filter_states()
