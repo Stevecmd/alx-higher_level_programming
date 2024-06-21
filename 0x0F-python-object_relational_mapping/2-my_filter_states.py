@@ -32,7 +32,7 @@ def filter_states():
         # Create a cursor object to interact with the database
         cur = db.cursor()
 
-        # Execute the SQL query to find states with the given name
+        # Execute the SQL query to find states with the exact given name
         query = """
         SELECT *
         FROM states
