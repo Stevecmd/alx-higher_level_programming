@@ -6,6 +6,7 @@ Lists all states with a name starting with 'N' from the database hbtn_0e_0_usa
 import MySQLdb
 import sys
 
+
 def filter_states():
     """
     Connects to the MySQL database and lists
@@ -15,7 +16,7 @@ def filter_states():
     if len(sys.argv) != 4:
         print("Usage: ./1-filter_states.py <username> <password> <database>")
         return
-    
+
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
@@ -53,6 +54,7 @@ def filter_states():
 
     except MySQLdb.Error as e:
         print(f"Error connecting to MySQL: {e}")
+
 
 if __name__ == "__main__":
     filter_states()
