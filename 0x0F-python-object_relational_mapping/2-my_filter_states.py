@@ -13,6 +13,7 @@ def filter_states():
     Connects to the MySQL database and displays
     all values in the states table where name matches the given argument.
     """
+
     # Get MySQL credentials and database name from command-line arguments
     username = sys.argv[1]
     password = sys.argv[2]
@@ -33,8 +34,12 @@ def filter_states():
         cur = db.cursor()
 
         # Execute the SQL query to find states with the exact given name
-        query = "SELECT * FROM states WHERE name LIKE BINARY '{}' " \
-            "ORDER BY id ASC".format(user_input)
+        query = """
+        SELECT *
+        FROM states
+        WHERE name = %s
+        ORDER BY id ASC
+        """
         cur.execute(query, (state_name,))
 
         # Fetch all the results and print them
@@ -48,6 +53,7 @@ def filter_states():
 
     except MySQLdb.Error as e:
         print(f"Error connecting to MySQL: {e}")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
