@@ -7,60 +7,19 @@ import MySQLdb
 import sys
 
 
-def filter_cities():
-    """
-    Connects to the MySQL database and lists
-    all cities of the specified state.
-    """
-    # Get MySQL credentials, database name,
-    # and state name from command-line arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-    state_name = sys.argv[4]
-
-    try:
-        # Connect to the MySQL server
-        db = MySQLdb.connect(
-            host="localhost",
-            port=3306,
-            user=username,
-            passwd=password,
-            db=database
-        )
-
-        # Create a cursor object to interact with the database
-        cur = db.cursor()
-
-        # Execute the SQL query to list cities of the specified state
-        query = """
-        SELECT cities.name
-        FROM cities
-        JOIN states ON cities.state_id = states.id
-        WHERE states.name = %s
-        ORDER BY cities.id ASC
-        """
-        cur.execute(query, (state_name,))
-
-        # Fetch all the results
-        rows = cur.fetchall()
-
-        # Check if cities were found for the state
-        if not rows:
-            print(f"No cities found for state '{state_name}'")
-        else:
-            # Extract city names from the results
-            city_names = [row[0] for row in rows]
-            # Print the cities as comma-separated values
-            print(", ".join(city_names))
-
-        # Close the cursor and database connection
-        cur.close()
-        db.close()
-
-    except MySQLdb.Error as e:
-        print(f"Error connecting to MySQL: {e}")
-
-
 if __name__ == "__main__":
-    filter_cities()
+    # Get arguments
+    username, password, database, state_name = argv[1:5]
+    db = MySQLdb.connect(
+        host="localhost", user=username, passwd=password, db=database
+    )
+    # queries to be run
+    query = "SELECT cities.name\
+            FROM cities JOIN states\
+            ON cities.state_id = states.id WHERE states.name = %s"
+    conn = db.conn()
+    conn.execute(query, (state_name, ))
+    cities = [city[0] for city in conn.fetchall()]
+    print(", ".join(cities))
+    conn.close()
+    db.close()
