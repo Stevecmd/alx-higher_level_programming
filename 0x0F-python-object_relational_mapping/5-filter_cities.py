@@ -12,14 +12,8 @@ def filter_cities():
     Connects to the MySQL database and lists
     all cities of the specified state.
     """
-    # Check if the correct number of arguments is provided
-    if len(sys.argv) != 5:
-        print(
-            "Usage: ./5-filter_cities.py <username> <pass> <DB> <state_name>"
-        )
-        sys.exit(1)
-
-    # Get MySQL credentials,
+    # Get MySQL credentials, database name,
+    # and state name from command-line arguments
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
