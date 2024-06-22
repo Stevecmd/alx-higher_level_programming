@@ -7,30 +7,66 @@ import MySQLdb
 import sys
 
 
-if __name__ == "__main__":
-    # Get arguments
+def filter_cities():
+    """
+    Connects to the MySQL database and lists
+    all cities of the specified state.
+    """
+    # Check if the correct number of arguments is provided
     if len(sys.argv) != 5:
-        print("Usage: ./5-filter_cities.py <username> \
-                <password> <database> <state_name>")
+        print(
+            "Usage: ./5-filter_cities.py <username> <pass> <DB> <state_name>"
+        )
         sys.exit(1)
 
-    username, password, database, state_name = sys.argv[1:5]
+    # Get MySQL credentials,
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
+    state_name = sys.argv[4]
 
-    # Connect to the database
-    db = MySQLdb.connect(
-        host="localhost", user=username, passwd=password, db=database
-    )
+    try:
+        # Connect to the MySQL server
+        db = MySQLdb.connect(
+            host="localhost",
+            port=3306,
+            user=username,
+            passwd=password,
+            db=database
+        )
 
-    # Create a cursor object
-    cur = db.cursor()
-    # Execute the query
-    query = "SELECT cities.name\
-            FROM cities JOIN states\
-            ON cities.state_id = states.id WHERE states.name = %s"
-    # Fetch and print results
-    cities = [city[0] for city in cur.fetchall()]
-    print(", ".join(cities))
+        # Create a cursor object to interact with the database
+        cur = db.cursor()
 
-    # Close cursor and database connection
-    cur.close()
-    db.close()
+        # Execute the SQL query to list cities of the specified state
+        query = """
+        SELECT cities.name
+        FROM cities
+        JOIN states ON cities.state_id = states.id
+        WHERE states.name = %s
+        ORDER BY cities.id ASC
+        """
+        cur.execute(query, (state_name,))
+
+        # Fetch all the results
+        rows = cur.fetchall()
+
+        # Check if cities were found for the state
+        if not rows:
+            print(f"No cities found for state '{state_name}'")
+        else:
+            # Extract city names from the results
+            city_names = [row[0] for row in rows]
+            # Print the cities as comma-separated values
+            print(", ".join(city_names))
+
+        # Close the cursor and database connection
+        cur.close()
+        db.close()
+
+    except MySQLdb.Error as e:
+        print(f"Error connecting to MySQL: {e}")
+
+
+if __name__ == "__main__":
+    filter_cities()
