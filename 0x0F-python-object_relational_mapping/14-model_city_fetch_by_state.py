@@ -16,12 +16,9 @@ if __name__ == "__main__":
 
     # Connection string
     engine = create_engine(
-        f'mysql+mysqldb://{username}:{password}@localhost:3306/{database}'
+        f'mysql+mysqldb://{username}:{password}@localhost:3306/{database}',
+        pool_pre_ping=True
     )
-
-    # Bind the engine to the metadata of the Base class so that
-    # the declaratives can be accessed through a DBSession instance
-    Base.metadata.bind = engine
 
     # Create a configured "Session" class
     Session = sessionmaker(bind=engine)
@@ -31,11 +28,11 @@ if __name__ == "__main__":
 
     try:
         # Query to fetch all cities sorted by id
-        cities = session.query(City).order_by(City.id).all()
+        results = session.query(State, City).join(City).order_by(City.id).all()
 
         # Print results grouped by state name
-        for city in cities:
-            print(f"{city.state.name}: ({city.id}) {city.name}")
+        for state, city in results:
+            print(f"{state.name}: ({city.id}) {city.name}")
 
     except Exception as e:
         print(f"Error: {e}")
