@@ -77,12 +77,15 @@ if __name__ == "__main__":
     db = MySQLdb.connect(
         host="localhost", user=username, passwd=password, db=database
     )
+    # Execute the SQL query to list cities of the specified state
     query = "SELECT cities.name\
             FROM cities JOIN states\
             ON cities.state_id = states.id WHERE states.name = %s"
+    # Create a cursor object to interact with the database
     cursor = db.cursor()
     cursor.execute(query, (state_name, ))
     cities = [city[0] for city in cursor.fetchall()]
     print(", ".join(cities))
+    # Close the cursor and database connection
     cursor.close()
     db.close()
