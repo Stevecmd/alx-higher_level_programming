@@ -10,7 +10,6 @@ from sqlalchemy.orm import sessionmaker
 from relationship_state import Base, State
 from relationship_city import City
 
-
 if __name__ == "__main__":
     if len(argv) != 4:
         print("Usage: {} <username> <password> <database>".format(argv[0]))
@@ -31,7 +30,9 @@ if __name__ == "__main__":
 
     # Query to fetch all states and their cities,
     # sorted by state.id and city.id
-    for state in session.query(State).order_by(State.id):
+    states = session.query(State).order_by(State.id).all()
+
+    for state in states:
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
             print("    {}: {}".format(city.id, city.name))
