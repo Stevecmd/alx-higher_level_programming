@@ -10,7 +10,6 @@ from sqlalchemy.orm import sessionmaker
 from relationship_state import Base, State
 from relationship_city import City
 
-
 if __name__ == "__main__":
     username, password, database = argv[1:4]
     db_uri = 'mysql+mysqldb://{}:{}@localhost/{}'.format(
@@ -27,13 +26,11 @@ if __name__ == "__main__":
 
     # Query to fetch all states and their cities,
     # sorted by state.id and city.id
-    # states = session.query(State).order_by(State.id).all()
+    states = session.query(State).order_by(State.id).all()
 
-    for state_instance in session.query(State).order_by(State.id):
-        print(state_instance.id, state_instance.name, sep=": ")
-
-        for city_instance in state_instance.cities:
-            print("    ", end="")
-            print(city_instance.id, city_instance.name, sep=": ")
+    for state in states:
+        print(f"{state.id}: {state.name}")
+        for city in state.cities:
+            print(f"    {city.id}: {city.name}")
 
     session.close()
