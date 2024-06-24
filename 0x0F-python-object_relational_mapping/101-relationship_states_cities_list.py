@@ -19,7 +19,7 @@ if __name__ == "__main__":
     db_uri = 'mysql+mysqldb://{}:{}@localhost/{}'.format(
         username, password, database
     )
-    engine = create_engine(db_uri)
+    engine = create_engine(db_uri, pool_pre_ping=True)
 
     # Create the required tables
     Base.metadata.create_all(engine)
@@ -28,11 +28,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Query to fetch all states and their cities,
-    # sorted by state.id and city.id
-    states = session.query(State).order_by(State.id).all()
-
-    for state in states:
+    for state in session.query(State):
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
             print("    {}: {}".format(city.id, city.name))
