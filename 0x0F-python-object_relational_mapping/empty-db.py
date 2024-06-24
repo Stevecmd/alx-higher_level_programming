@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 """
 empty-db.py
-Script to delete all content from the 'states' table in the 'hbtn_0e_0_usa' database.
+Script to delete all content from the 'states'
+table in the 'hbtn_0e_0_usa' database.
 """
 
 import MySQLdb
 import sys
+
 
 def empty_states_table(username, password, database):
     try:
@@ -30,7 +32,8 @@ def empty_states_table(username, password, database):
         # Commit changes
         db.commit()
 
-        print("All content deleted from 'states' table in database '{}'.".format(database))
+        print("All content deleted from 'states' table "
+              "in database '{}'.".format(database))
 
     except MySQLdb.Error as e:
         print(f"MySQL Error: {e}")
@@ -43,6 +46,7 @@ def empty_states_table(username, password, database):
             cur.close()
         if db:
             db.close()
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
