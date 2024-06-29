@@ -48,7 +48,8 @@ def main():
         print_status_codes(size, status_codes)
         raise
 
-    if line_count % 10 != 0:  # Print remaining lines if not a multiple of 10
+    # Print remaining lines if not a multiple of 10
+    if line_count % 10 != 0 and line_count > 0:
         print_status_codes(size, status_codes)
 
 
