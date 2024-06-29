@@ -16,9 +16,15 @@ def append_after(filename="", search_string="", new_string=""):
     """
     temp_lines = []
     with open(filename, "r") as file:
-        for line in file:
+        lines = file.readlines()
+        for i, line in enumerate(lines):
             temp_lines.append(line)
             if search_string in line:
-                temp_lines.append(new_string + "\n")
+                # Check if it's the last line or if the next line is not
+                # the new_string to avoid duplicate insertions
+                if (i == len(lines) - 1 or
+                        lines[i + 1].strip() != new_string.strip()):
+                    temp_lines.append(new_string)
     with open(filename, "w") as file:
-        file.writelines(temp_lines)
+        # Join the lines and write at once to avoid an extra newline at the end
+        file.write("".join(temp_lines))
