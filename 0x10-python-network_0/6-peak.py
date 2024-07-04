@@ -2,20 +2,20 @@
 """function to find peak in a list of unsorted integers."""
 
 
-def find_peak_element(numbers):
+def find_peak(list_of_integers):
     """
-    Find a peak element in a list of unsorted integers.
+    Find a peak in a list of unsorted integers.
     """
-    if not numbers:
+    if not list_of_integers:
         return None
 
-    start, end = 0, len(numbers) - 1
+    low, high = 0, len(list_of_integers) - 1
 
-    while start < end:
-        mid = (start + end) // 2
-        if numbers[mid] > numbers[mid + 1]:
-            end = mid
+    while low < high:
+        mid = (low + high) // 2
+        if list_of_integers[mid] > list_of_integers[mid + 1]:
+            high = mid
         else:
-            start = mid + 1
+            low = mid + 1
 
-    return numbers[start]
+    return list_of_integers[low]
