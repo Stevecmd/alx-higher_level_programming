@@ -40,11 +40,12 @@ Write a Python script that fetches `https://alx-intranet.hbtn.io/status`
 - You must use a `with` statement
 
 ```sh
-guillaume@ubuntu:~/0x11$ ./0-hbtn_status.py | cat -e
+(venv) stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x11-python-network_1$ pycodestyle 0-hbtn_status.py 
+(venv) stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x11-python-network_1$ ./0-hbtn_status.py | cat -e
 Body response:$
-    - type: <class 'bytes'>$
-    - content: b'OK'$
-    - utf8 content: OK$
+        - type: <class 'bytes'>$
+        - content: b'OK'$
+        - utf8 content: OK$
 ```
 File: `0-hbtn_status.py`
 
@@ -57,11 +58,12 @@ Write a Python script that takes in a URL, sends a request to the URL and displa
 - You don’t need to check arguments passed to the script (number or type)
 - You must use a with statement
 ```sh
-guillaume@ubuntu:~/0x11$ ./1-hbtn_header.py https://alx-intranet.hbtn.io
-ade2627e-41dd-4c34-b9d9-a0fa0f47b237
-guillaume@ubuntu:~/0x11$ 
-guillaume@ubuntu:~/0x11$ ./1-hbtn_header.py https://alx-intranet.hbtn.io
-6593e1f5-1b4b-4c9f-9c0e-72ab525b850f
+(venv) stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x11-python-network_1$ chmod +x 1-hbtn_header.py 
+(venv) stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x11-python-network_1$ pycodestyle 1-hbtn_header.py 
+(venv) stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x11-python-network_1$ ./1-hbtn_header.py https://alx-intranet.hbtn.io
+5d802a52-6267-4c4f-a8fe-6258b984c34d
+(venv) stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x11-python-network_1$ ./1-hbtn_header.py https://alx-intranet.hbtn.io
+071142e6-3c97-4b48-b869-1bf1ee7772f5
 ```
 File: `1-hbtn_header.py`
 
