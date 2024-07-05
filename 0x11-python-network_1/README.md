@@ -81,6 +81,10 @@ Please test your script in the sandbox provided, using the web server running on
 guillaume@ubuntu:~/0x11$ ./2-post_email.py http://0.0.0.0:5000/post_email hr@holbertonschool.com
 Your email is: hr@holbertonschool.com
 ```
+To confirm server availability use:
+```sh
+curl -d "email=hr@holbertonschool.com" http://0.0.0.0:5000/post_email
+```
 File: `2-post_email.py`
 
 3. Error code #0
