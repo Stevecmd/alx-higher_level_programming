@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-# This script takes in a letter, sends a POST request to a specified URL with
-# the letter as a parameter, and handles the response.
+"""
+This script takes in a letter, sends a POST request to a specified URL with
+the letter as a parameter, and handles the response.
+"""
 
 import requests
 import sys

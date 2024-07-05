@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-# This script takes a URL, sends a request to the URL, and displays the body
-# of the response. If the HTTP status code is greater than or equal to 400,
-# it prints "Error code:" followed by the status code.
+"""
+This script takes a URL, sends a request to the URL, and displays the body
+of the response. If the HTTP status code is greater than or equal to 400,
+it prints "Error code:" followed by the status code.
+"""
 
 import requests
 import sys
