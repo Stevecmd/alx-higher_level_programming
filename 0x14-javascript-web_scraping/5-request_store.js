@@ -1,24 +1,14 @@
 #!/usr/bin/node
 
 const request = require('request');
-const apiUrl = process.argv[2];
+const url = process.argv[2];
+const fs = require('fs');
+const filePath = process.argv[3];
 
-request.get(apiUrl, (error, response, body) => {
-  if (error) {
-    console.error(error);
-  } else {
-    const todos = JSON.parse(body);
-    const completedTasksByUser = {};
-
-    todos.forEach(todo => {
-      if (todo.completed) {
-        if (!completedTasksByUser[todo.userId]) {
-          completedTasksByUser[todo.userId] = 0;
-        }
-        completedTasksByUser[todo.userId]++;
-      }
-    });
-
-    console.log(completedTasksByUser);
-  }
-});
+request(url).pipe(fs.createWriteStream(filePath, { encoding: 'utf8' }))
+  .on('close', () => {
+    console.log(`Content saved to ${filePath}`);
+  })
+  .on('error', (error) => {
+    console.error(`Error: ${error.message}`);
+  });
