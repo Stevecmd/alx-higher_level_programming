@@ -47,15 +47,47 @@ deactivate
 ```
 
 ## Tasks
-0. Readme 
+0. Readme
+
+Write a script that reads and prints the content of a file.
+
+* The first argument is the file path
+* The content of the file must be read in `utf-8`
+* If an error occurred during the reading, print the error object
 
 
+```sh
+
+(myenv) stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x14-javascript-web_scraping$ chmod +x 0-readme.js 
+(myenv) stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x14-javascript-web_scraping$ ./0-readme.js cisfun
+C is super fun!
+
+(myenv) stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x14-javascript-web_scraping$ ./0-readme.js doesntexist
+[Error: ENOENT: no such file or directory, open 'doesntexist'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'doesntexist'
+}
+(myenv) stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x14-javascript-web_scraping$ semistandard 0-readme.js
+
+```
 
 File: `0-readme.js`
 
 1. Write me 
+Write a script that writes a string to a file.
+
+- The first argument is the file path
+- The second argument is the string to write
+- The content of the file must be written in `utf-8`
+- If an error occurred during while writing, print the error object
+
+```sh
 
 
+
+```
 
 File: `1-writeme.js`
 
