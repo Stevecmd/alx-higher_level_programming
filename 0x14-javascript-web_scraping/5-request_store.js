@@ -8,17 +8,17 @@ request.get(apiUrl, (error, response, body) => {
     console.error(error);
   } else {
     const todos = JSON.parse(body);
-    const completedTasks = {};
+    const completedTasksByUser = {};
 
     todos.forEach(todo => {
       if (todo.completed) {
-        if (!completedTasks[todo.userId]) {
-          completedTasks[todo.userId] = 0;
+        if (!completedTasksByUser[todo.userId]) {
+          completedTasksByUser[todo.userId] = 0;
         }
-        completedTasks[todo.userId]++;
+        completedTasksByUser[todo.userId]++;
       }
     });
 
-    console.log(completedTasks);
+    console.log(completedTasksByUser);
   }
 });
