@@ -85,14 +85,32 @@ Write a script that writes a string to a file.
 
 ```sh
 
-
+(myenv) stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x14-javascript-web_scraping$ chmod +x 1-writeme.js 
+(myenv) stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x14-javascript-web_scraping$ ./1-writeme.js my_file.txt "Python is cool"
+(myenv) stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x14-javascript-web_scraping$ cat my_file.txt ; echo ""
+Python is cool
+(myenv) stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x14-javascript-web_scraping$ semistandard 1-writeme.js 
 
 ```
 
 File: `1-writeme.js`
 
 2. Status code 
+Write a script that display the status code of a `GET` request.
 
+- The first argument is the URL to request (`GET`)
+- The status code must be printed like this: `code: <status code>`
+- You must use the module `request`
+```sh
+(myenv) stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x14-javascript-web_scraping$ sudo npm install request -g
+(myenv) stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x14-javascript-web_scraping$ chmod +x 2-statuscode.js
+(myenv) stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x14-javascript-web_scraping$ semistandard 2-statuscode.js
+(myenv) stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x14-javascript-web_scraping$ ./2-statuscode.js https://alx-intranet.hbtn.io/status
+code: 200
+(myenv) stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x14-javascript-web_scraping$ ./2-statuscode.js https://alx-intranet.hbtn.io/doesnt_exist
+code: 404
+
+```
 
 
 File: `2-statuscode.js`
