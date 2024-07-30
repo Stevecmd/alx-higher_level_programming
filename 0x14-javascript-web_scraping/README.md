@@ -203,5 +203,11 @@ File: `100-starwars_characters.js`
 8. Right order
 
 
+```sh
+(myenv) stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x14-javascript-web_scraping$ semistandard --fix 101-starwars_characters.js
+(myenv) stevecmd@DESKTOP-UTB295U:~/ALX/alx-higher_level_programming/0x14-javascript-web_scraping$ semistandard 101-starwars_characters.js 
+
+```
+
 
 File: `101-starwars_characters.js`
