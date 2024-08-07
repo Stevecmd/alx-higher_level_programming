@@ -46,3 +46,9 @@ Import JQuery
 8. Star Wars movies
 9. Say Hello!
 
+Starting a python env named myvenv:
+```sh
+python -m venv myvenv
+source myvenv/bin/activate
+deactivate
+```
